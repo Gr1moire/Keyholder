@@ -1,0 +1,89 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/common/props/lights/Blue fire/bluefire_4.png" type="Texture" id=1]
+[ext_resource path="res://assets/common/props/lights/Blue fire/bluefire_5.png" type="Texture" id=2]
+[ext_resource path="res://assets/common/props/lights/Blue fire/bluefire_0.png" type="Texture" id=3]
+[ext_resource path="res://assets/common/props/lights/Blue fire/bluefire_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/common/props/lights/Blue fire/bluefire_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/common/props/lights/Blue fire/bluefire_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/common/props/lights/Torch.gd" type="Script" id=7]
+[ext_resource path="res://assets/common/props/lights/fire.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/common/props/lights/light.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.60714, 6.69806 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.0465116, 0.271318, 0.496124, 0.728682, 0.837209, 0.930233, 0.937984, 1 )
+colors = PoolColorArray( 0.521569, 0.933333, 1, 1, 0.0669708, 0.185356, 0.300781, 1, 0.321037, 0.440678, 0.557328, 1, 1, 1, 1, 1, 1, 1, 1, 0.308235, 0.858824, 0.388235, 0.0784314, 0.231373, 0.784314, 0.301961, 0.0901961, 0, 0.954365, 0.888222, 0.87524, 0.396078 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.146591 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 1
+emission_sphere_radius = 5.47
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 61.74
+gravity = Vector3( 0, -50, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 3.0
+scale = 5.0
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
+hue_variation_random = 0.58
+
+[node name="Blue Fire" type="Node2D"]
+
+[node name="Blue Fire Sprite" type="AnimatedSprite" parent="."]
+show_behind_parent = true
+position = Vector2( 0.0429001, -13.4205 )
+frames = SubResource( 1 )
+animation = "New Anim"
+playing = true
+
+[node name="FlickeringLight" type="Light2D" parent="Blue Fire Sprite"]
+position = Vector2( -0.0374069, 20.4866 )
+scale = Vector2( 0.13395, 0.144664 )
+texture = ExtResource( 9 )
+offset = Vector2( -0.350907, 1.09048 )
+texture_scale = 2.0
+color = Color( 0.521569, 0.933333, 1, 1 )
+energy = 1.3
+shadow_enabled = true
+script = ExtResource( 7 )
+
+[node name="ConstantNoise" type="AudioStreamPlayer2D" parent="Blue Fire Sprite"]
+position = Vector2( -0.264214, 13.4062 )
+stream = ExtResource( 8 )
+autoplay = true
+max_distance = 500.0
+attenuation = 4.43827
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Blue Fire Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue Fire Sprite/StaticBody2D"]
+position = Vector2( 0.0936432, 21.0699 )
+shape = SubResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 0.58342, -9.58989 )
+amount = 16
+lifetime = 1.5
+process_material = SubResource( 7 )

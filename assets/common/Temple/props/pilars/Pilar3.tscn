@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/castle_pilar3.png-8e136790429bca1b30debcb82fb88444.stex"
+
+[sub_resource type="PhysicsMaterial" id=1]
+rough = true
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 7.88366 )
+
+[node name="Pilar3" type="Sprite"]
+position = Vector2( 0.075264, 33.7886 )
+scale = Vector2( 0.801126, 0.637239 )
+texture = SubResource( 3 )
+offset = Vector2( -0.61876, -53.0234 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.102581, 10.5234 )
+shape = SubResource( 2 )

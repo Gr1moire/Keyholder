@@ -1,0 +1,164 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://assets/common/props/lights/Red fire/fire_0.png" type="Texture" id=1]
+[ext_resource path="res://assets/common/props/lights/Red fire/fire_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/common/props/lights/Red fire/fire_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/common/props/lights/Red fire/fire_3.png" type="Texture" id=4]
+[ext_resource path="res://assets/common/props/lights/Red fire/fire_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/common/props/lights/Red fire/fire_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/common/props/lights/Red fire/no_fire.png" type="Texture" id=7]
+[ext_resource path="res://assets/common/props/lights/fire.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/common/props/lights/Red fire/LightFireSound.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/common/props/lights/light.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 10.0
+} ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.0465116, 0.317829, 0.666667, 0.875969, 0.930233, 0.937984, 0.945736 )
+colors = PoolColorArray( 0.972656, 0.366586, 0.0379944, 1, 0.820313, 0.182798, 0.0576782, 1, 1, 1, 1, 1, 1, 1, 1, 0.308235, 0.858824, 0.388235, 0.0784314, 0.231373, 0.784314, 0.301961, 0.0901961, 0, 0.954365, 0.888222, 0.87524, 0.396078 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.146591 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 1
+emission_sphere_radius = 5.47
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 61.74
+gravity = Vector3( 0, -50, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 3.0
+scale = 5.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+hue_variation = 0.12
+hue_variation_random = 0.41
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0, 0.449612, 0.751938, 0.945736 )
+colors = PoolColorArray( 0.835938, 0.237327, 0.0293884, 1, 0.786621, 0.0798912, 0.0798912, 1, 0.539063, 0.0631714, 0.0631714, 1, 0.372549, 0.0588235, 0.0588235, 0.145098 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+flag_disable_z = true
+direction = Vector3( 1, -100, 0 )
+spread = 10.0
+gravity = Vector3( 0, 150, 0 )
+initial_velocity = 120.0
+angular_velocity = 50.23
+angular_velocity_random = 0.31
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 30.23
+scale = 6.0
+scale_random = 0.3
+color_ramp = SubResource( 8 )
+hue_variation = 0.14
+hue_variation_random = 0.44
+
+[sub_resource type="GDScript" id=10]
+script/source = "extends Light2D
+
+onready var noise = OpenSimplexNoise.new()
+var value = 0.0
+const MAX_VALUE = 100000000
+
+func _ready():
+	randomize()
+	value = randi() % MAX_VALUE
+	noise.period = 1
+	
+func _physics_process(delta):
+	value += 0.5
+	if (value > MAX_VALUE + delta):
+		value = 0.0
+	var alpha = ((noise.get_noise_1d(value) + 1) / 4.0) + 0.5
+	self.color = Color(color.r, color.g, color.b, alpha)
+"
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 18.8754
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 9.2031, 4.50928 )
+
+[node name="Red Fire" type="Node2D"]
+position = Vector2( -0.174019, -0.801491 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.3125, -13.25 )
+texture = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 0.264214, -13.4062 )
+frames = SubResource( 1 )
+animation = "New Anim"
+frame = 4
+playing = true
+
+[node name="Smoke" type="Particles2D" parent="AnimatedSprite"]
+position = Vector2( 0.51442, 1.18681 )
+emitting = false
+amount = 16
+lifetime = 1.5
+process_material = SubResource( 6 )
+
+[node name="LitEffect" type="Particles2D" parent="AnimatedSprite"]
+position = Vector2( 0.15707, 5.01296 )
+emitting = false
+amount = 30
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.8
+process_material = SubResource( 9 )
+
+[node name="FlickeringLight" type="Light2D" parent="AnimatedSprite"]
+position = Vector2( -0.0598907, 9.75461 )
+scale = Vector2( 0.13395, 0.144664 )
+texture = ExtResource( 10 )
+texture_scale = 2.0
+color = Color( 1, 0.333333, 0, 0.8 )
+energy = 1.3
+shadow_enabled = true
+script = SubResource( 10 )
+
+[node name="LightingFire" type="AudioStreamPlayer2D" parent="AnimatedSprite"]
+stream = ExtResource( 9 )
+max_distance = 500.0
+
+[node name="ConstantNoise" type="AudioStreamPlayer2D" parent="AnimatedSprite"]
+position = Vector2( -0.264214, 13.4062 )
+stream = ExtResource( 8 )
+max_distance = 500.0
+attenuation = 4.43827
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="DetectionArea" type="CollisionShape2D" parent="Detection"]
+position = Vector2( 0, 0.5 )
+shape = SubResource( 11 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0.419071, 2.58538 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0.0519829, 7.45175 )
+shape = SubResource( 12 )
