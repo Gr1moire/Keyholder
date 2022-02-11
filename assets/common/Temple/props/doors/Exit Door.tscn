@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/common/props/doors/door2.png" type="Texture" id=1]
+[ext_resource path="res://assets/common/props/doors/Exit Door.gd" type="Script" id=2]
+
+[node name="Exit Door" type="Sprite"]
+visible = false
+position = Vector2( 433.254, -80.6263 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
