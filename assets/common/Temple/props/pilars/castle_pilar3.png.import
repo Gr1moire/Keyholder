@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/castle_pilar3.png-8e136790429bca1b30debcb82fb88444.stex"
+path="res://.import/castle_pilar3.png-93b3f2fa3606807aded761a3d74b7db1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/pilars/castle_pilar3.png"
-dest_files=[ "res://.import/castle_pilar3.png-8e136790429bca1b30debcb82fb88444.stex" ]
+source_file="res://assets/common/Temple/props/pilars/castle_pilar3.png"
+dest_files=[ "res://.import/castle_pilar3.png-93b3f2fa3606807aded761a3d74b7db1.stex" ]
 
 [params]
 

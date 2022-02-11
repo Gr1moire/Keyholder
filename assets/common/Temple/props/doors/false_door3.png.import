@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/false_door3.png-5597a66b0e7f96b87b8d076726e5a97b.stex"
+path="res://.import/false_door3.png-8ba55801b2443ab16f7bc3a6c9c1ff11.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/doors/false_door3.png"
-dest_files=[ "res://.import/false_door3.png-5597a66b0e7f96b87b8d076726e5a97b.stex" ]
+source_file="res://assets/common/Temple/props/doors/false_door3.png"
+dest_files=[ "res://.import/false_door3.png-8ba55801b2443ab16f7bc3a6c9c1ff11.stex" ]
 
 [params]
 

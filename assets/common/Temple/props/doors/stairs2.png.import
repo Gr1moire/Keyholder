@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stairs2.png-b1fb313de91bce239b58581d23a22c90.stex"
+path="res://.import/stairs2.png-b36dd8b63c71d2fac316afd3bcfcfed2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/doors/stairs2.png"
-dest_files=[ "res://.import/stairs2.png-b1fb313de91bce239b58581d23a22c90.stex" ]
+source_file="res://assets/common/Temple/props/doors/stairs2.png"
+dest_files=[ "res://.import/stairs2.png-b36dd8b63c71d2fac316afd3bcfcfed2.stex" ]
 
 [params]
 

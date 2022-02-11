@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pedestal_castle6.png-3878fc0516f18642ec9bc8c6c6329418.stex"
+path="res://.import/pedestal_castle6.png-f0ff2f76267bac93c11d92c0f9badb7a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/pedestals/pedestal_castle6.png"
-dest_files=[ "res://.import/pedestal_castle6.png-3878fc0516f18642ec9bc8c6c6329418.stex" ]
+source_file="res://assets/common/Temple/props/pedestals/pedestal_castle6.png"
+dest_files=[ "res://.import/pedestal_castle6.png-f0ff2f76267bac93c11d92c0f9badb7a.stex" ]
 
 [params]
 
