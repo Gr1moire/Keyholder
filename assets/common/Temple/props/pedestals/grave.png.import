@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grave.png-2c34e84ba35f06607d1512051439fdb0.stex"
+path="res://.import/grave.png-6dc84f851d0d74febf859ccef71aef54.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/pedestals/grave.png"
-dest_files=[ "res://.import/grave.png-2c34e84ba35f06607d1512051439fdb0.stex" ]
+source_file="res://assets/common/Temple/props/pedestals/grave.png"
+dest_files=[ "res://.import/grave.png-6dc84f851d0d74febf859ccef71aef54.stex" ]
 
 [params]
 

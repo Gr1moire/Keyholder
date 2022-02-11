@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stone4.png-17c2cd8b6820188187cd958caf99cfbe.stex"
+path="res://.import/stone4.png-d0411bd05b2cc31c175893559d6bc248.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/stones/stone4.png"
-dest_files=[ "res://.import/stone4.png-17c2cd8b6820188187cd958caf99cfbe.stex" ]
+source_file="res://assets/common/Temple/props/stones/stone4.png"
+dest_files=[ "res://.import/stone4.png-d0411bd05b2cc31c175893559d6bc248.stex" ]
 
 [params]
 

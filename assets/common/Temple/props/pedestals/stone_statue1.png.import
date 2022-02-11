@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stone_statue1.png-4f53c7b908a09b1153d8e2b06309e2e3.stex"
+path="res://.import/stone_statue1.png-b41de88fbd54eb6869bdeacd23c1cfdd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/pedestals/stone_statue1.png"
-dest_files=[ "res://.import/stone_statue1.png-4f53c7b908a09b1153d8e2b06309e2e3.stex" ]
+source_file="res://assets/common/Temple/props/pedestals/stone_statue1.png"
+dest_files=[ "res://.import/stone_statue1.png-b41de88fbd54eb6869bdeacd23c1cfdd.stex" ]
 
 [params]
 

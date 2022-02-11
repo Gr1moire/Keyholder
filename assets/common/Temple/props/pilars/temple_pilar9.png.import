@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/temple_pilar9.png-46da0f3fc8796cf89a3a7c0e5f841c4b.stex"
+path="res://.import/temple_pilar9.png-232d07046f11f7fa7012bd1605da9f51.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/pilars/temple_pilar9.png"
-dest_files=[ "res://.import/temple_pilar9.png-46da0f3fc8796cf89a3a7c0e5f841c4b.stex" ]
+source_file="res://assets/common/Temple/props/pilars/temple_pilar9.png"
+dest_files=[ "res://.import/temple_pilar9.png-232d07046f11f7fa7012bd1605da9f51.stex" ]
 
 [params]
 

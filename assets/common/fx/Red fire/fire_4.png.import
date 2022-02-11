@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire_4.png-6092c849dac3f554fa51e13bec9ae355.stex"
+path="res://.import/fire_4.png-1e37ff3d1b4ca1c75aad39891a976eb0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/lights/Red fire/fire_4.png"
-dest_files=[ "res://.import/fire_4.png-6092c849dac3f554fa51e13bec9ae355.stex" ]
+source_file="res://assets/common/fx/Red fire/fire_4.png"
+dest_files=[ "res://.import/fire_4.png-1e37ff3d1b4ca1c75aad39891a976eb0.stex" ]
 
 [params]
 

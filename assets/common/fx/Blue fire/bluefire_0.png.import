@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bluefire_0.png-78bed86465979ab6a69fb88470b3e893.stex"
+path="res://.import/bluefire_0.png-3ba9ba4fee9c50fc20561bcb79cd4b86.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/lights/Blue fire/bluefire_0.png"
-dest_files=[ "res://.import/bluefire_0.png-78bed86465979ab6a69fb88470b3e893.stex" ]
+source_file="res://assets/common/fx/Blue fire/bluefire_0.png"
+dest_files=[ "res://.import/bluefire_0.png-3ba9ba4fee9c50fc20561bcb79cd4b86.stex" ]
 
 [params]
 

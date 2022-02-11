@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/temple_decoration3.png-f7fda8eebf80dec6b4d20aa2c0e95bf1.stex"
+path="res://.import/temple_decoration3.png-f8f1b81e49fdc15fab274b6e0ffe3241.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/decorations/temple_decoration3.png"
-dest_files=[ "res://.import/temple_decoration3.png-f7fda8eebf80dec6b4d20aa2c0e95bf1.stex" ]
+source_file="res://assets/common/Temple/props/decorations/temple_decoration3.png"
+dest_files=[ "res://.import/temple_decoration3.png-f8f1b81e49fdc15fab274b6e0ffe3241.stex" ]
 
 [params]
 

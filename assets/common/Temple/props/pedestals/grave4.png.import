@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grave4.png-8db4c89df97a5335bb7b2e5faf4d2124.stex"
+path="res://.import/grave4.png-6146ea3dca4f35f4579bf9db17aec938.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/pedestals/grave4.png"
-dest_files=[ "res://.import/grave4.png-8db4c89df97a5335bb7b2e5faf4d2124.stex" ]
+source_file="res://assets/common/Temple/props/pedestals/grave4.png"
+dest_files=[ "res://.import/grave4.png-6146ea3dca4f35f4579bf9db17aec938.stex" ]
 
 [params]
 

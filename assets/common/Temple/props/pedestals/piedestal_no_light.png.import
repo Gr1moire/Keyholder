@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/piedestal_no_light.png-f713b7ffefee4002ec48b5ba4181625c.stex"
+path="res://.import/piedestal_no_light.png-caa22ed81afbe277a002aeb3f5433896.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/pedestals/piedestal_no_light.png"
-dest_files=[ "res://.import/piedestal_no_light.png-f713b7ffefee4002ec48b5ba4181625c.stex" ]
+source_file="res://assets/common/Temple/props/pedestals/piedestal_no_light.png"
+dest_files=[ "res://.import/piedestal_no_light.png-caa22ed81afbe277a002aeb3f5433896.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/barrel_titor.png-fcf60a606ea0cf263862a1fdd5cf8afc.stex"
+path="res://.import/barrel_titor.png-e1ca2e1ce7bd50a4d9bec9960751b1ab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/props/decorations/barrel_titor.png"
-dest_files=[ "res://.import/barrel_titor.png-fcf60a606ea0cf263862a1fdd5cf8afc.stex" ]
+source_file="res://assets/common/Temple/props/decorations/barrel_titor.png"
+dest_files=[ "res://.import/barrel_titor.png-e1ca2e1ce7bd50a4d9bec9960751b1ab.stex" ]
 
 [params]
 
