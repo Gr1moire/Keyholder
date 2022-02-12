@@ -50,22 +50,24 @@ color_ramp = SubResource( 4 )
 hue_variation_random = 0.58
 
 [node name="Blue Fire" type="Node2D"]
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Blue Fire Sprite" type="AnimatedSprite" parent="."]
 show_behind_parent = true
 position = Vector2( 0.0429001, -13.4205 )
 frames = SubResource( 1 )
 animation = "New Anim"
-frame = 3
+frame = 5
 playing = true
 
 [node name="FlickeringLight" type="Light2D" parent="Blue Fire Sprite"]
 position = Vector2( -0.0374069, 20.4866 )
-scale = Vector2( 0.13395, 0.144664 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 9 )
 offset = Vector2( -0.350907, 1.09048 )
 texture_scale = 2.0
 color = Color( 0.521569, 0.933333, 1, 1 )
+range_item_cull_mask = 3
 shadow_enabled = true
 script = ExtResource( 7 )
 
