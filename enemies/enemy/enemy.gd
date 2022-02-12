@@ -43,4 +43,5 @@ func move():
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("bullet"):
 		queue_free()
-		key.attached_to = null
+		if has_key:
+			key.attached_to = null
