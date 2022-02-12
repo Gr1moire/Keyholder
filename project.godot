@@ -14,6 +14,10 @@ config/name="The Key of Success"
 run/main_scene="res://common/cle/Cle_playground.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://globals/globals.gd"
+
 [input]
 
 right={
