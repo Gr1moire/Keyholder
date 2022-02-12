@@ -11,17 +11,12 @@ config_version=4
 [application]
 
 config/name="The Key of Success"
-run/main_scene="res://globals/Clé.tscn"
+run/main_scene="res://common/cle/Cle_playground.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-TransitionsAl="*res://autoload/TransitionsAL.tscn"
-
-[display]
-
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
+Globals="*res://globals/globals.gd"
 
 [input]
 

@@ -7,8 +7,11 @@ var velocity: Vector2 = Vector2.ZERO
 var path: Array = []
 var levelNavigation: Navigation2D = null
 var player = null
+var key
+var has_key: bool = false
 
 func _ready():
+	key = Globals.key
 	var tree = get_tree()
 	if tree.has_group("LevelNavigation"): 
 		levelNavigation = tree.get_nodes_in_group("LevelNavigation")[0]
@@ -17,7 +20,6 @@ func _ready():
 		
 
 func _physics_process(_delta):
-	$Line2D.global_position = Vector2.ZERO
 	if player and levelNavigation:
 		generate_path()
 		navigate()
@@ -33,8 +35,7 @@ func navigate():
 func generate_path():
 	if levelNavigation != null and player != null:
 		path = levelNavigation.get_simple_path(global_position, player.global_position, false)
-		$Line2D.points = path
-	
+
 
 func move():
 	velocity = move_and_slide(velocity)
@@ -42,3 +43,4 @@ func move():
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("bullet"):
 		queue_free()
+		key.attached_to = null
