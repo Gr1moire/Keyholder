@@ -21,6 +21,7 @@ var key
 var has_key: bool = false
 var near_point: bool = true
 var flee_point: float = 0
+var is_disabled: bool = false
 
 var rng = RandomNumberGenerator.new()
 
@@ -36,11 +37,14 @@ func _ready():
 func _physics_process(delta):
 	if global_position.distance_to(run_point[flee_point]) < 50:
 		near_point = true
-	
+
 	if has_key:
 		if near_point:
 			flee_point = get_best_flee()
 			near_point = false
+		if not is_disabled:
+			$Collision.disabled = true
+			is_disabled = true
 	
 	if player and levelNavigation:
 		generate_path()
@@ -76,7 +80,7 @@ func _on_Area2D_area_entered(area):
 func trigger_death():
 	$Particles2D.emitting = true
 	$ColorRect.visible = false
-	$CollisionShape2D.queue_free()
+	$Collision.queue_free()
 	dead = true
 	yield(get_tree().create_timer(1.25), "timeout");
 	queue_free();
