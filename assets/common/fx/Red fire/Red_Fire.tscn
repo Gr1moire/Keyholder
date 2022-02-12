@@ -7,8 +7,8 @@
 [ext_resource path="res://assets/common/fx/Red fire/fire_4.png" type="Texture" id=5]
 [ext_resource path="res://assets/common/fx/Red fire/fire_5.png" type="Texture" id=6]
 [ext_resource path="res://assets/common/fx/Red fire/no_fire.png" type="Texture" id=7]
-[ext_resource path="res://assets/common/fx/fire.mp3" type="AudioStream" id=8]
-[ext_resource path="res://assets/common/fx/Red 	fire/LightFireSound.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/common/sound/fire.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/common/fx/Red fire/LightFireSound.ogg" type="AudioStream" id=9]
 [ext_resource path="res://assets/common/light.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -106,7 +106,6 @@ position = Vector2( 0.3125, -13.25 )
 texture = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 0.264214, -13.4062 )
 frames = SubResource( 1 )
 animation = "New Anim"
@@ -115,7 +114,6 @@ playing = true
 
 [node name="Smoke" type="Particles2D" parent="AnimatedSprite"]
 position = Vector2( 0.51442, 1.18681 )
-emitting = false
 amount = 16
 lifetime = 1.5
 process_material = SubResource( 6 )
@@ -162,3 +160,4 @@ position = Vector2( 0.419071, 2.58538 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 0.0519829, 7.45175 )
 shape = SubResource( 12 )
+disabled = true
