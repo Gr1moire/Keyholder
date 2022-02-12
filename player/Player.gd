@@ -10,6 +10,12 @@ var bullet = preload("res://player/Bullet.tscn")
 var can_fire = true
 
 var velocity = Vector2.ZERO
+var key
+var has_key: bool = false
+
+func _ready():
+	key = Globals.key
+	pass
 
 func _process(_delta):
 	look_at(get_global_mouse_position())
@@ -39,3 +45,9 @@ func _physics_process(delta):
 
 func move():
 	velocity = move_and_slide(velocity)
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("enemy"):
+		if has_key:
+			key.transfer_ownership(body)
+			has_key = false
