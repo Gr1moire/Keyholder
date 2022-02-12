@@ -99,4 +99,4 @@ position = Vector2( 985, 576 )
 
 [node name="Spawner" parent="." instance=ExtResource( 8 )]
 position = Vector2( 291, 161 )
-interval = 30.0
+interval = 10.0

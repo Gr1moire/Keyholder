@@ -48,3 +48,6 @@ func _on_RigidBody2D_body_entered(body: Node2D):
 		if body.is_in_group(group):
 			self.transfer_ownership(body)
 			self.move(attached_to.position)
+			print("prout")
+			if not body.is_in_group("player"):
+				body.has_key = false
