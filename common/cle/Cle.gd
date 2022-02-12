@@ -6,7 +6,7 @@ onready var noise = OpenSimplexNoise.new()
 export(Array, String) var group_to_attach_to = ["Player"]
 export(float) var max_health = 300.0;
 export(float) var hp_drain_per_second = 10.0;
-export(float) var hp_heal_per_second = 200.0;
+export(float) var hp_heal_per_second = 0.0;
 export(Curve) var fluctuations;
 export(float) var max_fluctuation_speed = 100.0;
 export(float) var fluctuation_percentage = 30.0;
