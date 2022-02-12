@@ -8,7 +8,18 @@ func _ready():
 	$Timer.connect("timeout", self, "pillarone")
 
 func starting_state():
-	$MenuMusic.play()
+	$CanvasLayer/KeyQuit.visible = false
+	$CanvasLayer/KeyStart.visible = false
+	$Props/PiedestalLight.visible = false
+	$Props/PiedestalLight2.visible = false
+	$Props/PiedestalLight/Light2D.visible = false
+	$Props/PiedestalLight/Light2D2.visible = false
+	$Props/PiedestalLight/Light2D3.visible = false
+	$Props/PiedestalLight/Light2D4.visible = false
+	$Props/PiedestalLight2/Light2D.visible = false
+	$Props/PiedestalLight2/Light2D2.visible = false
+	$Props/PiedestalLight2/Light2D3.visible = false
+	$Props/PiedestalLight2/Light2D4.visible = false
 	$Pillar/Pillar_1/CastlePilarRight/AnimatedSprite.visible = false
 	$Pillar/Pillar_1/CastlePilarLeft/AnimatedSprite.visible = false
 	$Pillar/Pillar_2/CastlePilarRight/AnimatedSprite.visible = false
@@ -27,12 +38,13 @@ func starting_state():
 	$Pillar/Pillar_2/CastlePilarRight/Particles2D.visible = false
 	$Pillar/Pillar_3/CastlePilarLeft/Particles2D.visible = false
 	$Pillar/Pillar_3/CastlePilarRight/Particles2D.visible = false
-	$Control/Title.visible_characters = 0
-	$Control/MenuButton.visible = false
+	$CanvasLayer/Control/Title.visible_characters = 0
+	$CanvasLayer/Control/MenuButton.visible = false
 	$Door.visible = true
 
 func pillarone():
 	$Timer.disconnect("timeout", self, "pillarone")
+	$LightFireSound.play()
 	$Pillar/Pillar_1/CastlePilarLeft/AnimatedSprite.visible = true
 	$Pillar/Pillar_1/CastlePilarRight/AnimatedSprite.visible = true
 	$Pillar/Pillar_1/CastlePilarLeft/Light2D.visible = true
@@ -44,6 +56,7 @@ func pillarone():
 
 func pillartwo():
 	$Timer.disconnect("timeout", self, "pillartwo")
+	$LightFireSound.play()
 	$Pillar/Pillar_2/CastlePilarLeft/AnimatedSprite.visible = true
 	$Pillar/Pillar_2/CastlePilarRight/AnimatedSprite.visible = true
 	$Pillar/Pillar_2/CastlePilarLeft/Light2D.visible = true
@@ -55,32 +68,48 @@ func pillartwo():
 
 func pillarthree():
 	$Timer.disconnect("timeout", self, "pillarthree")
+	$LightFireSound.play()
 	$Pillar/Pillar_3/CastlePilarLeft/AnimatedSprite.visible = true
 	$Pillar/Pillar_3/CastlePilarRight/AnimatedSprite.visible = true
 	$Pillar/Pillar_3/CastlePilarLeft/Light2D.visible = true
 	$Pillar/Pillar_3/CastlePilarRight/Light2D.visible = true
 	$Pillar/Pillar_3/CastlePilarLeft/Particles2D.visible = true
 	$Pillar/Pillar_3/CastlePilarRight/Particles2D.visible = true
+	$Props/PiedestalLight.visible = true
+	$Props/PiedestalLight2.visible = true
+	$Props/PiedestalLight/Light2D.visible = true
+	$Props/PiedestalLight/Light2D2.visible = true
+	$Props/PiedestalLight/Light2D3.visible = true
+	$Props/PiedestalLight/Light2D4.visible = true
+	$Props/PiedestalLight2/Light2D.visible = true
+	$Props/PiedestalLight2/Light2D2.visible = true
+	$Props/PiedestalLight2/Light2D3.visible = true
+	$Props/PiedestalLight2/Light2D4.visible = true
 	$AnimationPlayer.play("Pop")
+	$MenuMusic.play()
 
 func fading_letter_finished():
-	$Control/MenuButton.visible = true
+	$CanvasLayer/Control/MenuButton.visible = true
 	$Door.visible = false
-	$Control/MenuButton/Start.grab_focus()
+	$CanvasLayer/Control/MenuButton/Start.grab_focus()
 
 func _on_Start_pressed():
 	$MenuMusic.stop()
-	TransitionsAl.new_scene_dir = scene
-	TransitionsAl.select_transition = TransitionsAl.transition_type.Fade
-	TransitionsAl.load_state()
+	#TransitionsAl.new_scene_dir = scene
+	#TransitionsAl.select_transition = TransitionsAl.transition_type.Fade
+	#TransitionsAl.load_state()
 
 func _on_Quit_pressed():
 	get_tree().quit()
 
 func _on_Start_focus_entered():
 	$MenuSound.play()
+	$CanvasLayer/KeyStart.visible = true
+	$CanvasLayer/KeyQuit.visible = false
 
 
 func _on_Quit_focus_entered():
 	$MenuSound.play()
+	$CanvasLayer/KeyStart.visible = false
+	$CanvasLayer/KeyQuit.visible = true
 
