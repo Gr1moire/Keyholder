@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/Temple/props/pilars/Stone_pilar_new.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/common/light.png" type="Texture" id=3]
+[ext_resource path="res://assets/common/fx/Red fire/Red_Fire.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/common/fx/Blue fire/Blue Fire.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -42,72 +44,87 @@ cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 3, 8, 131074, 13, 8, 131074, 17, 8, 131074, 28, 8, 131074, 65539, 8, 131079, 65549, 8, 131079, 65553, 8, 131079, 65564, 8, 131079, 131075, 8, 262146, 131085, 8, 262146, 131089, 8, 262146, 131100, 8, 262146, 589831, 1, 65537 )
 
-[node name="Pilars" type="Node2D" parent="."]
+[node name="Obstacles" type="Node2D" parent="."]
 
-[node name="YSort" type="YSort" parent="Pilars"]
+[node name="YSort" type="YSort" parent="Obstacles"]
 
-[node name="StonePilar" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 529, 72 )
 
-[node name="StonePilar2" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar2" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 424, 160 )
 
-[node name="StonePilar15" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar15" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 424, 160 )
 
-[node name="StonePilar14" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar14" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 566, 160 )
 
-[node name="StonePilar13" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar13" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 464, 72 )
 
-[node name="StonePilar3" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar3" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 376, 372 )
 
-[node name="StonePilar4" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar4" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 376, 232 )
 
-[node name="StonePilar5" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar5" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 264, 232 )
 
-[node name="StonePilar6" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar6" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 264, 372 )
 
-[node name="StonePilar7" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar7" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 128, 372 )
 
-[node name="StonePilar8" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar8" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 128, 232 )
 
-[node name="StonePilar16" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar16" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 856, 372 )
 
-[node name="StonePilar17" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar17" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 856, 232 )
 
-[node name="StonePilar18" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar18" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 744, 232 )
 
-[node name="StonePilar19" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar19" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 744, 372 )
 
-[node name="StonePilar20" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar20" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 608, 372 )
 
-[node name="StonePilar21" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar21" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 608, 232 )
 
-[node name="StonePilar9" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar9" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 464, 557 )
 
-[node name="StonePilar12" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar12" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 529, 557 )
 
-[node name="StonePilar10" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar10" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 566, 456 )
 
-[node name="StonePilar11" parent="Pilars/YSort" instance=ExtResource( 2 )]
+[node name="StonePilar11" parent="Obstacles/YSort" instance=ExtResource( 2 )]
 position = Vector2( 424, 456 )
+
+[node name="Blue Fire" parent="Obstacles/YSort" instance=ExtResource( 5 )]
+position = Vector2( 909, 496 )
+
+[node name="Blue Fire2" parent="Obstacles/YSort" instance=ExtResource( 5 )]
+position = Vector2( 96, 496 )
+
+[node name="Blue Fire3" parent="Obstacles/YSort" instance=ExtResource( 5 )]
+position = Vector2( 321, 299 )
+
+[node name="Blue Fire4" parent="Obstacles/YSort" instance=ExtResource( 5 )]
+position = Vector2( 672, 302 )
+
+[node name="Red Fire2" parent="Obstacles/YSort" instance=ExtResource( 4 )]
+position = Vector2( 496, 299 )
 
 [node name="Lights" type="Node2D" parent="."]
 
@@ -161,8 +178,10 @@ shadow_enabled = true
 
 [node name="Light2D2" type="Light2D" parent="Lights"]
 light_mask = 7
-position = Vector2( 529, 294 )
+position = Vector2( -256, 480 )
 scale = Vector2( 0.318848, 0.274414 )
 texture = ExtResource( 3 )
 energy = 1.41
 shadow_enabled = true
+
+[editable path="Obstacles/YSort/StonePilar"]
