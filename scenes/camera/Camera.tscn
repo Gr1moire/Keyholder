@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/camera/NiceCamera.gd" type="Script" id=1]
+
+[sub_resource type="Environment" id=1]
+glow_enabled = true
 
 [node name="Camera2D" type="Camera2D"]
 position = Vector2( 512, 300 )
@@ -8,3 +11,6 @@ current = true
 script = ExtResource( 1 )
 screenSize = Vector2( 1024, 600 )
 extendedCameraScale = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
