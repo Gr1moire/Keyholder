@@ -47,7 +47,7 @@ func move():
 	velocity = move_and_slide(velocity)
 
 func _on_Area2D_body_entered(body):
-	if body.is_in_group("enemy"):
+	if body.is_in_group("enemy") and not body.dead:
 		if has_key:
 			key.transfer_ownership(body)
 			has_key = false

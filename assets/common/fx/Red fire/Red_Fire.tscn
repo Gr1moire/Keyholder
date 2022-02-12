@@ -109,7 +109,7 @@ texture = ExtResource( 7 )
 position = Vector2( 0.264214, -13.4062 )
 frames = SubResource( 1 )
 animation = "New Anim"
-frame = 4
+frame = 2
 playing = true
 
 [node name="Smoke" type="Particles2D" parent="AnimatedSprite"]
