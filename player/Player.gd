@@ -48,5 +48,5 @@ func move():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("enemy"):
-		print(body)
-		key.transfer_ownership(body)
+		if has_key:
+			key.transfer_ownership(body)
