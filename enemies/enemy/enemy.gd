@@ -34,8 +34,6 @@ func _ready():
 		player = tree.get_nodes_in_group("player")[0]
 
 func _physics_process(delta):
-	$Line2D.global_position = Vector2.ZERO
-	
 	if global_position.distance_to(run_point[flee_point]) < 50:
 		near_point = true
 	
@@ -62,7 +60,6 @@ func generate_path():
 			path = levelNavigation.get_simple_path(global_position, run_point[flee_point], false)
 		else:
 			path = levelNavigation.get_simple_path(global_position, player.global_position, false)
-		$Line2D.points = path
 
 func move():
 	velocity = move_and_slide(velocity)
