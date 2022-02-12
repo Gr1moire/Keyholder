@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/common/light.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11, 11 )
+extents = Vector2( 12, 12 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 11, 11 )
