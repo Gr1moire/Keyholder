@@ -95,9 +95,9 @@ func fading_letter_finished():
 
 func _on_Start_pressed():
 	$MenuMusic.stop()
-	#TransitionsAl.new_scene_dir = scene
-	#TransitionsAl.select_transition = TransitionsAl.transition_type.Fade
-	#TransitionsAl.load_state()
+	TransitionsAl.new_scene_dir = scene
+	TransitionsAl.select_transition = TransitionsAl.transition_type.Fade
+	TransitionsAl.load_state()
 
 func _on_Quit_pressed():
 	get_tree().quit()
