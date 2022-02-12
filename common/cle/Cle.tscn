@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/common/cle.webp" type="Texture" id=1]
 [ext_resource path="res://common/cle/Cle.gd" type="Script" id=2]
 [ext_resource path="res://assets/common/light.png" type="Texture" id=3]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -3.25, 2.14286, 0, 0 ]
 
 [sub_resource type="Animation" id=2]
 resource_name = "UpAndDown"
@@ -35,6 +38,8 @@ height = 2.0
 
 [node name="clé" type="Area2D"]
 script = ExtResource( 2 )
+hp_heal_per_second = 0.0
+fluctuations = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/UpAndDown = SubResource( 2 )
