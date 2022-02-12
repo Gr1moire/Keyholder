@@ -16,9 +16,10 @@ margin_left = -11.0
 margin_top = -11.0
 margin_right = 11.0
 margin_bottom = 11.0
+color = Color( 0, 0.0156863, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BulletPoint" type="Node2D" parent="."]
-position = Vector2( 40, 0 )
+position = Vector2( 20, 0 )

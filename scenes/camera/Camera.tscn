@@ -7,3 +7,4 @@ position = Vector2( 512, 300 )
 current = true
 script = ExtResource( 1 )
 screenSize = Vector2( 1024, 600 )
+extendedCameraScale = 0.5
