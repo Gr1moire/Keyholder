@@ -11,7 +11,7 @@ var can_fire = true
 
 var velocity = Vector2.ZERO
 
-func _process(delta):
+func _process(_delta):
 	look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("fire") and can_fire:
