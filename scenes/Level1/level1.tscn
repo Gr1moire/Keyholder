@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/Temple/props/pilars/Stone_pilar_new.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://common/animations/Tween.gd" type="Script" id=13]
 [ext_resource path="res://common/animations/IntroTween.gd" type="Script" id=14]
 [ext_resource path="res://ui/GameOver.tscn" type="PackedScene" id=15]
+[ext_resource path="res://common/Portal.gd" type="Script" id=16]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -75,6 +76,9 @@ func _physics_process(delta):
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 512, 11.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 23, 10 )
 
 [node name="Level1" type="WorldEnvironment"]
 environment = SubResource( 1 )
@@ -189,7 +193,7 @@ position = Vector2( 424, 456 )
 position = Vector2( 263, 96 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire3" index="0"]
-frame = 5
+frame = 2
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire3/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -198,7 +202,7 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 744, 94 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire4" index="0"]
-frame = 0
+frame = 3
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire4/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -207,7 +211,7 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 96, 504 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire5" index="0"]
-frame = 0
+frame = 3
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire5/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -216,7 +220,7 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 920, 506 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire6" index="0"]
-frame = 0
+frame = 3
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire6/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -364,6 +368,15 @@ position = Vector2( -280, 94 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Intro Event"]
 position = Vector2( 798, 210 )
 shape = SubResource( 5 )
+
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2( 484, 72 )
+script = ExtResource( 16 )
+nextScene = "res://scenes/Level2/level2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+position = Vector2( 13, 0 )
+shape = SubResource( 7 )
 
 [editable path="clé"]
 [editable path="Obstacles/YSort/Blue Fire3"]
