@@ -45,6 +45,7 @@ func starting_state():
 func pillarone():
 	$Timer.disconnect("timeout", self, "pillarone")
 	$LightFireSound.play()
+	$FireSound.play()
 	$Pillar/Pillar_1/CastlePilarLeft/AnimatedSprite.visible = true
 	$Pillar/Pillar_1/CastlePilarRight/AnimatedSprite.visible = true
 	$Pillar/Pillar_1/CastlePilarLeft/Light2D.visible = true
@@ -95,6 +96,7 @@ func fading_letter_finished():
 
 func _on_Start_pressed():
 	$MenuMusic.stop()
+	$FireSound.stop()
 	TransitionsAl.new_scene_dir = scene
 	TransitionsAl.select_transition = TransitionsAl.transition_type.Fade
 	TransitionsAl.load_state()
