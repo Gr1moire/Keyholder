@@ -14,6 +14,7 @@ func loseAnimation():
 	var initialPosition = camera.position;
 	var initialZoom = camera.zoom;
 	var key_position = Vector2(key.position.x, key.position.y);
+	print(key_position);
 	interpolate_property(camera, "position", initialPosition, key_position, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT);
 	interpolate_property(camera, "zoom", initialZoom, Vector2(0.4, 0.4), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT);
 	start();
