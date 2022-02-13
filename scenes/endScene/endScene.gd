@@ -19,6 +19,8 @@ func start():
 	yield(self.get_tree().create_timer(revelation_interval), "timeout")
 	$Node2D/Creator.visible = true
 	yield(self.get_tree().create_timer(revelation_interval), "timeout")
+	$Node2D/Patron.visible = true
+	yield(self.get_tree().create_timer(revelation_interval), "timeout")
 	$Node2D/FullTextLeft.visible = true
 	$Node2D/FullTextRight.visible = true
 	yield(self.get_tree().create_timer(revelation_interval), "timeout")
@@ -27,6 +29,8 @@ func start():
 	yield(self.get_tree().create_timer(revelation_interval), "timeout")
 	$Node2D/FullTextLeft.set_max_lines_visible(3)
 	$Node2D/FullTextRight.set_max_lines_visible(3)
+	yield(self.get_tree().create_timer(revelation_interval), "timeout")
+	$Node2D/Chapipi.visible = true
 	self.can_cancel = true
 
 func exit():
@@ -34,6 +38,8 @@ func exit():
 	$Node2D/BigTitle.visible = false
 	yield(self.get_tree().create_timer(revelation_interval), "timeout")
 	$Node2D/Creator.visible = false
+	yield(self.get_tree().create_timer(revelation_interval), "timeout")
+	$Node2D/Patron.visible = false
 	yield(self.get_tree().create_timer(revelation_interval), "timeout")
 	$Node2D/FullTextLeft.set_max_lines_visible(2)
 	$Node2D/FullTextRight.set_max_lines_visible(2)
@@ -43,6 +49,7 @@ func exit():
 	yield(self.get_tree().create_timer(revelation_interval), "timeout")
 	$Node2D/FullTextLeft.visible = false
 	$Node2D/FullTextRight.visible = false
+	$Node2D/Chapipi.visible = false
 	yield(self.get_tree().create_timer(revelation_interval + blackout), "timeout")
 	if self.get_tree().change_scene_to(scene_to_load):
 		print("error changing scene")
