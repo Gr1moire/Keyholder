@@ -14,6 +14,7 @@ func _on_RetourMenu_pressed():
 	yield(get_tree().create_timer(1.0), "timeout")
 	TransitionsAl.new_scene_dir = "res://menus/Menu.tscn"
 	TransitionsAl.select_transition = TransitionsAl.transition_type.Fade
+	Music.stopEverything()
 	TransitionsAl.load_state()
 
 func _on_Rejouer_pressed():

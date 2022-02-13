@@ -11,6 +11,16 @@ func playLevelMusic():
 	
 func playLevelSound():
 	$LevelSound.play();
+	
+func stopEverything():
+	$LevelMusic.stop();
+	$LevelSound.stop();
+	
+func getIsLevelMusicPlaying():
+	return $LevelMusic.playing;
+	
+func getIsLevelSoundPlaying():
+	return $LevelSound.playing;
 "
 
 [node name="Node" type="Node"]

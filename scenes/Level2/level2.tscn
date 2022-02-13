@@ -282,12 +282,10 @@ margin_right = 206.0
 margin_bottom = 34.0
 
 [node name="GameOver" parent="UI/Label" instance=ExtResource( 15 )]
-pause_mode = 2
 
 [node name="Camera2D" parent="UI" instance=ExtResource( 3 )]
 pause_mode = 2
 position = Vector2( 534, 300 )
-current = false
 
 [node name="Spawner" parent="." instance=ExtResource( 14 )]
 position = Vector2( 256, 121 )
