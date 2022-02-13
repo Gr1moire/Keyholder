@@ -66,6 +66,7 @@ tracks/0/keys = {
 }
 
 [node name="GameOver" type="Control"]
+pause_mode = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
