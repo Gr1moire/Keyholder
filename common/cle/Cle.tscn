@@ -9,7 +9,7 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.89091, 1.4, 0, 0 
 
 [sub_resource type="Animation" id=7]
 resource_name = "Lose animation"
-length = 4.0
+length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:self_modulate")
 tracks/0/interp = 1
@@ -17,7 +17,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.7, 3.4, 3.8 ),
+"times": PoolRealArray( 0, 1.1, 1.5, 1.9 ),
 "transitions": PoolRealArray( 1, 0.554785, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
@@ -29,7 +29,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 3.6 ),
+"times": PoolRealArray( 1.7 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -75,10 +75,11 @@ gradient = SubResource( 4 )
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 49.02
+initial_velocity = 235.07
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 5.0
+angle_random = 1.0
+scale = 7.0
 color_ramp = SubResource( 5 )
 hue_variation_random = 0.67
 
@@ -112,8 +113,8 @@ shadow_item_cull_mask = 2
 [node name="LoseParticles" type="Particles2D" parent="."]
 position = Vector2( -1, 1 )
 emitting = false
-amount = 30
-lifetime = 0.7
+amount = 150
+lifetime = 2.0
 one_shot = true
 explosiveness = 0.87
 process_material = SubResource( 6 )
