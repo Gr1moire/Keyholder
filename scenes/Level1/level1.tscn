@@ -187,9 +187,6 @@ position = Vector2( 424, 456 )
 [node name="Blue Fire3" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 263, 96 )
 
-[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire3" index="0"]
-frame = 0
-
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire3/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
 
@@ -197,7 +194,7 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 744, 94 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire4" index="0"]
-frame = 1
+frame = 5
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire4/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -206,7 +203,7 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 96, 504 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire5" index="0"]
-frame = 1
+frame = 5
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire5/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -215,7 +212,7 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 920, 506 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire6" index="0"]
-frame = 1
+frame = 5
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire6/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
