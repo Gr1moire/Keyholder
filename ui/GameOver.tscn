@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ui/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://assets/common/font/Montserrat-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/common/sound/Menu Selection Click.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/common/sound/validation.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -118,5 +120,13 @@ flat = true
 anims/Pop = SubResource( 6 )
 anims/RESET = SubResource( 7 )
 
+[node name="ChangingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="ValidationSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="focus_entered" from="MenuButton/Rejouer" to="." method="_on_Rejouer_focus_entered"]
 [connection signal="pressed" from="MenuButton/Rejouer" to="." method="_on_Rejouer_pressed"]
+[connection signal="focus_entered" from="MenuButton/RetourMenu" to="." method="_on_RetourMenu_focus_entered"]
 [connection signal="pressed" from="MenuButton/RetourMenu" to="." method="_on_RetourMenu_pressed"]
