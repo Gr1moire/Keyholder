@@ -4,6 +4,7 @@ onready var timer = $Timer
 export (float) var timeout = 300.0
 
 func _ready():
+	Music.play()
 	$"clé".connect("zero_health", self, "_start_lose_animation");
 	$AnimationPlayer.connect("animation_finished", self, "_on_door_appeared");
 	$AnimationPlayer.play("Door Appear")
