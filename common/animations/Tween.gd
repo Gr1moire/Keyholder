@@ -1,6 +1,6 @@
 extends Tween
 
-onready var camera = get_node("../../Camera2D");
+onready var camera = get_node("../../UI/Camera2D");
 onready var key = Globals.key;
 
 func _ready():
