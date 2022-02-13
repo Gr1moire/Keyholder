@@ -43,7 +43,7 @@ func _physics_process(delta):
 	if not lose and (not attached_to or not attached_to.is_in_group("Player")):
 		health -= 1 * delta * hp_drain_per_second
 		emit_signal("value_changed");
-	else:
+	elif not lose:
 		health += 1 * delta * hp_heal_per_second
 		emit_signal("value_changed");
 	health = clamp(health, 0, max_health)

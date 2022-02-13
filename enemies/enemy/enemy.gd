@@ -26,6 +26,7 @@ var is_disabled: bool = false
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	$AnimatedSprite.play("wak")
 	rng.randomize()
 	key = Globals.key
 	var tree = get_tree()
@@ -79,7 +80,7 @@ func _on_Area2D_area_entered(area):
 
 func trigger_death():
 	$Particles2D.emitting = true
-	$ColorRect.visible = false
+	$AnimatedSprite.visible = false
 	$Collision.queue_free()
 	dead = true
 	yield(get_tree().create_timer(1.25), "timeout");

@@ -11,4 +11,5 @@ screenSize = Vector2( 1024, 600 )
 extendedCameraScale = 0.5
 
 [node name="Cuticule" type="Sprite" parent="."]
+light_mask = 0
 texture = ExtResource( 2 )
