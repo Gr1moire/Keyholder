@@ -36,6 +36,10 @@ func _process(delta):
 	$Light2D.energy = current_energy - random_fluctuation
 
 func _physics_process(delta):
+	if health == 0 && !lose:
+		lose = true;
+		emit_signal("zero_health");
+		pass
 	if not lose and not attached_to or not attached_to.is_in_group("Player"):
 		health -= 1 * delta * hp_drain_per_second
 		emit_signal("value_changed");
@@ -43,9 +47,7 @@ func _physics_process(delta):
 		health += 1 * delta * hp_heal_per_second
 		emit_signal("value_changed");
 	health = clamp(health, 0, max_health)
-	if health == 0 && !lose:
-		lose = true;
-		emit_signal("zero_health");
+
 
 func transfer_ownership(body: Node2D):
 	attached_to = body
