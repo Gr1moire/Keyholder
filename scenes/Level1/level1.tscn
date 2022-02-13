@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/Temple/props/pilars/Stone_pilar_new.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://common/spawner/navigation.tres" type="TileSet" id=11]
 [ext_resource path="res://ui/default/key_life_gauge.tscn" type="PackedScene" id=12]
 [ext_resource path="res://common/animations/Tween.gd" type="Script" id=13]
+[ext_resource path="res://common/animations/IntroTween.gd" type="Script" id=14]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -58,6 +59,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0, 1.41 ]
 }
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends Camera2D
+
+export (NodePath) var player = null;
+onready var playerNode = get_node(player);
+var followPlayer = true
+
+func _physics_process(delta):
+	if (followPlayer):
+		position = playerNode.position
+"
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 512, 11.5 )
 
 [node name="Level1" type="WorldEnvironment"]
 environment = SubResource( 1 )
@@ -172,7 +188,7 @@ position = Vector2( 424, 456 )
 position = Vector2( 263, 96 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire3" index="0"]
-frame = 3
+frame = 0
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire3/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -180,17 +196,26 @@ scale = Vector2( 0.1, 0.1 )
 [node name="Blue Fire4" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 744, 94 )
 
+[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire4" index="0"]
+frame = 1
+
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire4/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Blue Fire5" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 96, 504 )
 
+[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire5" index="0"]
+frame = 1
+
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire5/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Blue Fire6" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 920, 506 )
+
+[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire6" index="0"]
+frame = 1
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire6/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -285,22 +310,38 @@ pause_mode = 2
 pause_mode = 2
 script = ExtResource( 13 )
 
+[node name="IntroTween" type="Tween" parent="AnimationPlayer"]
+script = ExtResource( 14 )
+camera = NodePath("../../UI/introCam")
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
 
 [node name="Spawner" parent="." instance=ExtResource( 4 )]
 position = Vector2( 298, 490 )
+parent_path = NodePath("../Obstacles/YSort")
 interval = 1.5
+spawning = false
 
 [node name="Spawner2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 726, 491 )
+parent_path = NodePath("../Obstacles/YSort")
 interval = 1.5
+spawning = false
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Camera2D" parent="UI" instance=ExtResource( 8 )]
 pause_mode = 2
 position = Vector2( 534, 300 )
+current = false
+
+[node name="introCam" type="Camera2D" parent="UI"]
+position = Vector2( 494, 523 )
+current = true
+zoom = Vector2( 0.7, 0.7 )
+script = SubResource( 6 )
+player = NodePath("../../Obstacles/YSort/Player")
 
 [node name="Label" type="Label" parent="UI"]
 margin_bottom = 14.0
@@ -313,6 +354,13 @@ margin_left = 30.0
 margin_top = 18.0
 margin_right = 206.0
 margin_bottom = 34.0
+
+[node name="Intro Event" type="Area2D" parent="."]
+position = Vector2( -280, 94 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Intro Event"]
+position = Vector2( 798, 210 )
+shape = SubResource( 5 )
 
 [editable path="clé"]
 [editable path="Obstacles/YSort/Blue Fire3"]

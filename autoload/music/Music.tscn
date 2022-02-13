@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/common/sound/fato_shadow_-_pray_for_satan.mp3" type="AudioStream" id=1]
+[ext_resource path="res://assets/common/sound/232685__julius-galla__atmosphere-cave-loop.wav" type="AudioStream" id=2]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+func playLevelMusic():
+	$LevelMusic.play()
+	
+func playLevelSound():
+	$LevelSound.play();
+"
+
+[node name="Node" type="Node"]
+script = SubResource( 1 )
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+
+[node name="LevelSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 2.63
