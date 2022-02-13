@@ -300,7 +300,6 @@ interval = 1.5
 
 [node name="Camera2D" parent="UI" instance=ExtResource( 8 )]
 pause_mode = 2
-position = Vector2( 534, 300 )
 
 [node name="Label" type="Label" parent="UI"]
 margin_bottom = 14.0

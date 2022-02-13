@@ -51,7 +51,6 @@ func _physics_process(delta):
 		generate_path()
 		navigate()
 	if not dead:
-		$AnimatedSprite.flip_h = !velocity.x < 0
 		move()
 
 func navigate():
@@ -85,5 +84,6 @@ func trigger_death():
 	$Collision.queue_free()
 	Globals.camera.shake(0.2, 15, 8)
 	dead = true
+	$AnimationPlayer.play("Shrink light")
 	yield(get_tree().create_timer(0.5), "timeout");
 	queue_free();

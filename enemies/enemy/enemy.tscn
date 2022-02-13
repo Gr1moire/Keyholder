@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://enemies/enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/common/light.png" type="Texture" id=2]
@@ -45,8 +45,23 @@ initial_velocity = 231.94
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 10.73
-color = Color( 0.698039, 0.0313726, 1, 1 )
+color = Color( 1, 0, 0, 1 )
 color_ramp = SubResource( 5 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "Shrink light"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, -2 ),
+"update": 0,
+"values": [ 0.13, 0.01 ]
+}
 
 [node name="enemy" type="KinematicBody2D" groups=["enemy", "wall"]]
 script = ExtResource( 1 )
@@ -76,5 +91,8 @@ texture = ExtResource( 2 )
 texture_scale = 0.13
 color = Color( 0.709804, 0, 1, 1 )
 energy = 0.8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Shrink light" = SubResource( 12 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
