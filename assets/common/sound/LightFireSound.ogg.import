@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LightFireSound.ogg-6319b04c330828af54cc86614c1b6008.oggstr"
+
+[deps]
+
+source_file="res://assets/common/sound/LightFireSound.ogg"
+dest_files=[ "res://.import/LightFireSound.ogg-6319b04c330828af54cc86614c1b6008.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

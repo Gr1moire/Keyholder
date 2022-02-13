@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/deviation2.ogg-221e88445520799581d2fe871775a623.oggstr"
+
+[deps]
+
+source_file="res://assets/common/sound/deviation2.ogg"
+dest_files=[ "res://.import/deviation2.ogg-221e88445520799581d2fe871775a623.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
