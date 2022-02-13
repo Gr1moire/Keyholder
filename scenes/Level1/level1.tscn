@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/Temple/props/pilars/Stone_pilar_new.tscn" type="PackedScene" id=2]
@@ -57,21 +57,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.41 ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "Lose"
-length = 5.0
-tracks/0/type = "method"
-tracks/0/path = NodePath("Camera2D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
 }
 
 [node name="Level1" type="WorldEnvironment"]
@@ -309,7 +294,6 @@ shadow_enabled = true
 pause_mode = 2
 "anims/Door Appear" = SubResource( 3 )
 "anims/Light Appears" = SubResource( 4 )
-anims/Lose = SubResource( 5 )
 
 [node name="LoseTween" type="Tween" parent="AnimationPlayer"]
 pause_mode = 2
