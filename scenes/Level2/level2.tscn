@@ -282,7 +282,6 @@ margin_right = 206.0
 margin_bottom = 34.0
 
 [node name="GameOver" parent="UI/Label" instance=ExtResource( 15 )]
-pause_mode = 2
 
 [node name="Camera2D" parent="UI" instance=ExtResource( 3 )]
 pause_mode = 2
