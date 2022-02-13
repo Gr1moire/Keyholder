@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://assets/common/font/FairyDustB.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/common/Temple/props/stones/stone5.png" type="Texture" id=17]
 [ext_resource path="res://assets/common/Temple/props/stones/stone1.png" type="Texture" id=18]
 [ext_resource path="res://assets/common/Temple/props/stones/stone2.png" type="Texture" id=19]
+[ext_resource path="res://assets/common/sound/fire.mp3" type="AudioStream" id=20]
 
 [sub_resource type="Environment" id=16]
 auto_exposure_scale = 13.68
@@ -436,12 +437,19 @@ anims/RESET = SubResource( 13 )
 
 [node name="MenuSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -10.0
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -10.0
 
 [node name="LightFireSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = -10.0
+
+[node name="FireSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -12.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
