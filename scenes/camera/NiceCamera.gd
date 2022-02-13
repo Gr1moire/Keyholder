@@ -14,6 +14,7 @@ var _last_offset = Vector2(0, 0)
 
 func _ready():
 	set_process(true)
+	Globals.camera = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 # Shake with decreasing intensity while there's time remaining.

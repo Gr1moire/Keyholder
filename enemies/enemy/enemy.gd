@@ -82,6 +82,7 @@ func trigger_death():
 	$Particles2D.emitting = true
 	$AnimatedSprite.visible = false
 	$Collision.queue_free()
+	Globals.camera.shake(0.2, 15, 8)
 	dead = true
-	yield(get_tree().create_timer(1.25), "timeout");
+	yield(get_tree().create_timer(0.5), "timeout");
 	queue_free();
