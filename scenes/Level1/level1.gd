@@ -1,6 +1,7 @@
 extends WorldEnvironment
 
-var introDone = false
+var introDone = false;
+var doorOpened = false;
 
 func _ready():
 	Music.playLevelSound();
@@ -14,6 +15,7 @@ func _on_door_appeared(animName):
 	if (animName == "Door Appear"):
 		$Door2/Light2D2.enabled = true
 		$AnimationPlayer.play("Light Appears")
+		doorOpened = true
 		
 func _start_lose_animation():
 	$AnimationPlayer/LoseTween.loseAnimation();
@@ -29,6 +31,7 @@ func _start_intro_animation(body):
 		$AnimationPlayer/IntroTween.introAnimation();
 		yield(get_tree().create_timer(0.8), "timeout");
 		$UI/Camera2D.current = true;
-		Music.playLevelMusic();
+		if (!Music.getIsLevelMusicPlaying()):
+			Music.playLevelMusic();
 		$Spawner.start();
 		$Spawner2.start();

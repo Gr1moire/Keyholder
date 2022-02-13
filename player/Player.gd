@@ -5,6 +5,7 @@ export var ACCELERATION = 6000
 export var FRICTION = 2000
 export var bullet_speed = 1000
 export var fire_rate = 0.2
+var canInteract = false;
 
 var bullet = preload("res://player/Bullet.tscn")
 var can_fire = true
@@ -15,10 +16,14 @@ var has_key: bool = false
 
 func _ready():
 	key = Globals.key
-	pass
+	Globals.player = self;
 
 func _process(_delta):
 	look_at(get_global_mouse_position())
+	if canInteract and not $PressE.visible:
+		$PressE.visible = true;
+	elif not canInteract and $PressE.visible:
+		$PressE.visible = true; 
 	
 	if Input.is_action_pressed("fire") and can_fire:
 		Globals.camera.shake(0.1, 15, 2)
