@@ -51,6 +51,7 @@ func _physics_process(delta):
 		generate_path()
 		navigate()
 	if not dead:
+		$AnimatedSprite.flip_h = !velocity.x < 0
 		move()
 
 func navigate():
