@@ -55,12 +55,9 @@ func transfer_ownership(body: Node2D):
 
 func _on_RigidBody2D_body_entered(body: Node2D):
 	for group in group_to_attach_to:
-		if body.is_in_group(group):
+		if body.is_in_group(group) and attached_to == null:
 			self.transfer_ownership(body)
 			self.move(attached_to.position)
-			print("prout")
-			if not body.is_in_group("player"):
-				body.has_key = false
 				
 func start_key_lose_animation():
 	$AnimationPlayer.play("Lose animation");
