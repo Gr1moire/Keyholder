@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://assets/common/font/FairyDustB.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/common/Temple/props/stones/stone1.png" type="Texture" id=18]
 [ext_resource path="res://assets/common/Temple/props/stones/stone2.png" type="Texture" id=19]
 [ext_resource path="res://assets/common/sound/fire.mp3" type="AudioStream" id=20]
+[ext_resource path="res://assets/common/sound/validation.wav" type="AudioStream" id=21]
 
 [sub_resource type="Environment" id=16]
 auto_exposure_scale = 13.68
@@ -302,7 +303,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_3/CastlePilarRight"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_3/CastlePilarRight"]
@@ -324,7 +325,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_3/CastlePilarLeft"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_3/CastlePilarLeft"]
@@ -349,6 +350,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_2/CastlePilarRight"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_2/CastlePilarRight"]
@@ -370,7 +372,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_2/CastlePilarLeft"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_2/CastlePilarLeft"]
@@ -395,6 +397,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_1/CastlePilarRight"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_1/CastlePilarRight"]
@@ -416,7 +419,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_1/CastlePilarLeft"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_1/CastlePilarLeft"]
@@ -436,6 +439,9 @@ process_material = SubResource( 20 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Pop = SubResource( 12 )
 anims/RESET = SubResource( 13 )
+
+[node name="MenuValidation" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
 
 [node name="MenuSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
