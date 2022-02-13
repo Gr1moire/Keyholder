@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=1]
 [ext_resource path="res://common/spawner/navigation.tres" type="TileSet" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://common/cle/Cle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://common/level_environment.tres" type="Environment" id=7]
+[ext_resource path="res://assets/common/Temple/props/pilars/broken_stone_pilar4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/common/Temple/props/pilars/Stone_pilar_new.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ui/default/key_life_gauge.tscn" type="PackedScene" id=10]
+[ext_resource path="res://common/animations/Tween.gd" type="Script" id=11]
+[ext_resource path="res://scenes/Level1/level1.gd" type="Script" id=12]
+[ext_resource path="res://assets/common/Temple/props/doors/door3.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Lose animation"
@@ -61,11 +67,47 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1, 2, 3, 4 )
 }
 
+[sub_resource type="OccluderPolygon2D" id=5]
+cull_mode = 2
+polygon = PoolVector2Array( -32, -20, -32, -25, -27, -32, -16, -40, -1, -44, 13, -41, 21, -38, 26, -33, 30, -29, 32, -24, 32, 21, 23, 21, 22, 19, 16, 19, 16, 16, 13, 11, 13, -7, 13, -22, 5, -27, -4, -27, -11, -25, -13, -23, -13, 16, -16, 16, -16, 19, -21, 19, -23, 21, -32, 21 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Door Appear"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door2:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 59.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.556863, 0.411765, 0.101961, 0 ), Color( 1, 1, 0.5, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Light Appears"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door2/Light2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.41 ]
+}
+
 [node name="Level2" type="WorldEnvironment"]
 environment = ExtResource( 7 )
+script = ExtResource( 12 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.176471, 0.152941, 0.290196, 1 )
+color = Color( 0.188235, 0.164706, 0.301961, 1 )
 
 [node name="Navigation2D" type="Navigation2D" parent="." groups=["LevelNavigation"]]
 
@@ -100,9 +142,6 @@ hp_heal_per_second = 2.0
 "anims/Lose animation" = SubResource( 1 )
 anims/UpAndDown = SubResource( 2 )
 
-[node name="LoseParticles" parent="clé" index="4"]
-emitting = false
-
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 pause_mode = 2
 position = Vector2( 534, 300 )
@@ -116,7 +155,9 @@ position = Vector2( 259, 76 )
 scale = Vector2( 0.17218, 0.157349 )
 texture = ExtResource( 4 )
 color = Color( 0.545098, 0.882353, 1, 1 )
+range_item_cull_mask = 3
 shadow_enabled = true
+shadow_item_cull_mask = 3
 
 [node name="Light2D7" type="Light2D" parent="Lights"]
 light_mask = 7
@@ -124,7 +165,9 @@ position = Vector2( 32, 272 )
 scale = Vector2( 0.17218, 0.157349 )
 texture = ExtResource( 4 )
 color = Color( 0.545098, 0.882353, 1, 1 )
+range_item_cull_mask = 3
 shadow_enabled = true
+shadow_item_cull_mask = 3
 
 [node name="Light2D3" type="Light2D" parent="Lights"]
 light_mask = 7
@@ -132,7 +175,9 @@ position = Vector2( 803, 83 )
 scale = Vector2( 0.17218, 0.157349 )
 texture = ExtResource( 4 )
 color = Color( 0.545098, 0.882353, 1, 1 )
+range_item_cull_mask = 3
 shadow_enabled = true
+shadow_item_cull_mask = 3
 
 [node name="Light2D5" type="Light2D" parent="Lights"]
 light_mask = 7
@@ -140,7 +185,9 @@ position = Vector2( 914, 54 )
 scale = Vector2( 0.17218, 0.157349 )
 texture = ExtResource( 4 )
 color = Color( 0.545098, 0.882353, 1, 1 )
+range_item_cull_mask = 3
 shadow_enabled = true
+shadow_item_cull_mask = 3
 
 [node name="Light2D6" type="Light2D" parent="Lights"]
 light_mask = 7
@@ -148,6 +195,28 @@ position = Vector2( 993, 271 )
 scale = Vector2( 0.17218, 0.157349 )
 texture = ExtResource( 4 )
 color = Color( 0.545098, 0.882353, 1, 1 )
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_item_cull_mask = 3
+
+[node name="Door2" type="Sprite" parent="."]
+modulate = Color( 34.1, 36.05, 38.15, 1 )
+self_modulate = Color( 0.556863, 0.411765, 0.101961, 0 )
+position = Vector2( 529, 61 )
+texture = ExtResource( 13 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Door2"]
+position = Vector2( -1, 1 )
+occluder = SubResource( 5 )
+
+[node name="Light2D2" type="Light2D" parent="Door2"]
+light_mask = 7
+position = Vector2( 1, -19 )
+scale = Vector2( 0.318848, 0.950806 )
+texture = ExtResource( 4 )
+color = Color( 0.972549, 0.972549, 0.972549, 1 )
+energy = 0.0
+range_item_cull_mask = 3
 shadow_enabled = true
 
 [node name="YSort" type="YSort" parent="."]
@@ -156,6 +225,7 @@ shadow_enabled = true
 position = Vector2( 515, 529 )
 
 [node name="Light2D" type="Light2D" parent="YSort/Player"]
+position = Vector2( -3, 39 )
 scale = Vector2( 0.324707, 0.324707 )
 texture = ExtResource( 4 )
 texture_scale = 4.2
@@ -163,5 +233,54 @@ color = Color( 0.243137, 0.898039, 0.964706, 1 )
 energy = 0.51
 shadow_enabled = true
 shadow_filter = 4
+
+[node name="obstacles" type="YSort" parent="YSort"]
+
+[node name="StonePilar" parent="YSort/obstacles" instance=ExtResource( 9 )]
+position = Vector2( 368, 333 )
+
+[node name="StonePilar2" parent="YSort/obstacles" instance=ExtResource( 9 )]
+position = Vector2( 144, 224 )
+
+[node name="StonePilar3" parent="YSort/obstacles" instance=ExtResource( 9 )]
+position = Vector2( 144, 304 )
+
+[node name="broken_stone_pilar_4" parent="YSort/obstacles" instance=ExtResource( 8 )]
+position = Vector2( 336, 200 )
+
+[node name="broken_stone_pilar_5" parent="YSort/obstacles" instance=ExtResource( 8 )]
+position = Vector2( 944, 232 )
+
+[node name="broken_stone_pilar_6" parent="YSort/obstacles" instance=ExtResource( 8 )]
+position = Vector2( 824, 176 )
+
+[node name="obstacles2" type="YSort" parent="YSort"]
+position = Vector2( 288, 0 )
+
+[node name="StonePilar" parent="YSort/obstacles2" instance=ExtResource( 9 )]
+position = Vector2( 369, 333 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+"anims/Door Appear" = SubResource( 3 )
+"anims/Light Appears" = SubResource( 4 )
+
+[node name="LoseTween" type="Tween" parent="AnimationPlayer"]
+pause_mode = 2
+script = ExtResource( 11 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaminaBar" parent="UI/Label" instance=ExtResource( 10 )]
+margin_left = 30.0
+margin_top = 18.0
+margin_right = 206.0
+margin_bottom = 34.0
 
 [editable path="clé"]
