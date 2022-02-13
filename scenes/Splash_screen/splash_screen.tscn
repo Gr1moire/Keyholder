@@ -7,13 +7,13 @@
 [sub_resource type="GDScript" id=2]
 script/source = "extends Node2D
 
-export (Resource) var nextScene;
+export (String, FILE) var nextScene;
 
 func _ready():
 	$AnimationPlayer.play(\"Appear\");
-	$AnimationPlayer.connect(\"animation_finished\", self, \"_next\");
-	
-func _next():
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	print(nextScene);
 	get_tree().change_scene(nextScene);
 "
 
@@ -71,7 +71,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Label/Gandhipng:self_modulate")
+tracks/3/path = NodePath("Label/Gandhi:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -82,9 +82,24 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.305882 ), Color( 1, 1, 1, 0.305882 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("AnimationPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 10.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "animation_finished" ],
+"method": "emit_signal"
+} ]
+}
 
 [node name="splash screen" type="Node2D"]
 script = SubResource( 2 )
+nextScene = "res://menus/Menu.tscn"
 
 [node name="Label" type="Label" parent="."]
 margin_right = 40.0
@@ -133,10 +148,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Gandhipng" type="Sprite" parent="Label"]
+[node name="Gandhi" type="Sprite" parent="Label"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 344, 437 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Appear = SubResource( 1 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

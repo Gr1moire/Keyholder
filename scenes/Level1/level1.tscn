@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/Temple/props/pilars/Stone_pilar_new.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://common/cle/Cle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Level1/level1.gd" type="Script" id=10]
 [ext_resource path="res://common/spawner/navigation.tres" type="TileSet" id=11]
+[ext_resource path="res://ui/default/key_life_gauge.tscn" type="PackedScene" id=12]
+[ext_resource path="res://common/animations/Tween.gd" type="Script" id=13]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -28,7 +30,7 @@ polygon = PoolVector2Array( -32, -20, -32, -25, -27, -32, -16, -40, -1, -44, 13,
 
 [sub_resource type="Animation" id=3]
 resource_name = "Door Appear"
-length = 300.0
+length = 60.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Door2:self_modulate")
 tracks/0/interp = 1
@@ -36,7 +38,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 26.4 ),
+"times": PoolRealArray( 0, 59.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0.556863, 0.411765, 0.101961, 0 ), Color( 1, 1, 0.5, 1 ) ]
@@ -55,6 +57,21 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.41 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Lose"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("Camera2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
 }
 
 [node name="Level1" type="WorldEnvironment"]
@@ -98,11 +115,10 @@ format = 1
 tile_data = PoolIntArray( 3, 8, 131074, 13, 8, 131074, 17, 8, 131074, 28, 8, 131074, 65539, 8, 131079, 65549, 8, 131079, 65553, 8, 131079, 65564, 8, 131079, 131075, 8, 262146, 131085, 8, 262146, 131099, 19, 0, 131100, 8, 262146, 196626, 19, 65538, 393233, 19, 65537, 458759, 19, 65537, 458777, 19, 1, 524302, 19, 2, 589833, 19, 1, 589834, 19, 2, 720913, 19, 0, 786442, 19, 1, 851970, 19, 0, 851982, 19, 0, 983057, 19, 1, 1048580, 19, 0 )
 
 [node name="clé" parent="." instance=ExtResource( 9 )]
-position = Vector2( 494, 541 )
-
-[node name="Light2D" parent="clé" index="3"]
-range_item_cull_mask = 3
-shadow_item_cull_mask = 2
+pause_mode = 2
+self_modulate = Color( 0.933333, 0.933333, 0.933333, 0.901961 )
+position = Vector2( 495, 538 )
+hp_heal_per_second = 2.0
 
 [node name="Obstacles" type="Node2D" parent="."]
 
@@ -172,7 +188,7 @@ position = Vector2( 424, 456 )
 position = Vector2( 263, 96 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire3" index="0"]
-frame = 4
+frame = 3
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire3/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -180,11 +196,17 @@ scale = Vector2( 0.1, 0.1 )
 [node name="Blue Fire4" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 744, 94 )
 
+[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire4" index="0"]
+frame = 4
+
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire4/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Blue Fire5" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 96, 504 )
+
+[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire5" index="0"]
+frame = 4
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire5/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -192,10 +214,13 @@ scale = Vector2( 0.1, 0.1 )
 [node name="Blue Fire6" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 920, 506 )
 
+[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire6" index="0"]
+frame = 4
+
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire6/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
 
-[node name="Player" parent="Obstacles/YSort" groups=["Player"] instance=ExtResource( 7 )]
+[node name="Player" parent="Obstacles/YSort" instance=ExtResource( 7 )]
 position = Vector2( 494, 523 )
 
 [node name="Light2D" type="Light2D" parent="Obstacles/YSort/Player"]
@@ -206,6 +231,10 @@ color = Color( 0.243137, 0.898039, 0.964706, 1 )
 energy = 0.51
 shadow_enabled = true
 shadow_filter = 4
+
+[node name="Camera2D" parent="." instance=ExtResource( 8 )]
+pause_mode = 2
+position = Vector2( 534, 300 )
 
 [node name="Lights" type="Node2D" parent="."]
 
@@ -257,12 +286,9 @@ texture = ExtResource( 3 )
 color = Color( 0.545098, 0.882353, 1, 1 )
 shadow_enabled = true
 
-[node name="Camera2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 534, 300 )
-
 [node name="Door2" type="Sprite" parent="."]
 modulate = Color( 34.1, 36.05, 38.15, 1 )
-self_modulate = Color( 1, 1, 0.5, 1 )
+self_modulate = Color( 0.556863, 0.411765, 0.101961, 0 )
 position = Vector2( 498, 46 )
 texture = ExtResource( 6 )
 
@@ -280,8 +306,14 @@ range_item_cull_mask = 3
 shadow_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
 "anims/Door Appear" = SubResource( 3 )
 "anims/Light Appears" = SubResource( 4 )
+anims/Lose = SubResource( 5 )
+
+[node name="LoseTween" type="Tween" parent="AnimationPlayer"]
+pause_mode = 2
+script = ExtResource( 13 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
@@ -293,6 +325,20 @@ interval = 1.5
 [node name="Spawner2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 726, 491 )
 interval = 1.5
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaminaBar" parent="UI/Label" instance=ExtResource( 12 )]
+margin_left = 30.0
+margin_top = 18.0
+margin_right = 206.0
+margin_bottom = 34.0
 
 [editable path="clé"]
 [editable path="Obstacles/YSort/Blue Fire3"]

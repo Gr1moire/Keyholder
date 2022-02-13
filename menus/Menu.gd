@@ -1,6 +1,6 @@
 extends WorldEnvironment
 
-export(Resource) var scene
+export (String, FILE) var scene
 
 func _ready():
 	starting_state()

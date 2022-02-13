@@ -15,6 +15,9 @@ var time = 0.0;
 var max_energy = 0;
 var tmp
 var health = max_health;
+var lose:bool = false;
+signal value_changed;
+signal zero_health;
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,7 +26,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (attached_to):
+	if (attached_to and !lose):
 		self.move(attached_to.position, delta * 2.3)
 	time += delta;
 	var current_energy = clamp((health / max_health) * max_energy, 0, max_energy);
@@ -33,11 +36,16 @@ func _process(delta):
 	$Light2D.energy = current_energy - random_fluctuation
 
 func _physics_process(delta):
-	if not attached_to or not attached_to.is_in_group("Player"):
+	if not lose and not attached_to or not attached_to.is_in_group("Player"):
 		health -= 1 * delta * hp_drain_per_second
+		emit_signal("value_changed");
 	else:
 		health += 1 * delta * hp_heal_per_second
+		emit_signal("value_changed");
 	health = clamp(health, 0, max_health)
+	if health == 0 && !lose:
+		lose = true;
+		emit_signal("zero_health");
 
 func transfer_ownership(body: Node2D):
 	attached_to = body
@@ -51,3 +59,6 @@ func _on_RigidBody2D_body_entered(body: Node2D):
 			print("prout")
 			if not body.is_in_group("player"):
 				body.has_key = false
+				
+func start_key_lose_animation():
+	$AnimationPlayer.play("Lose animation");
