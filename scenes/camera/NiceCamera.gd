@@ -14,9 +14,11 @@ var _last_offset = Vector2(0, 0)
 
 func _ready():
 	set_process(true)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 # Shake with decreasing intensity while there's time remaining.
 func _process(delta):
+	$Cuticule.position = get_local_mouse_position()
 	var mouse_pos = get_global_mouse_position()
 	offset_h = (mouse_pos.x - global_position.x) / (screenSize.x / extendedCameraScale)
 	offset_v = (mouse_pos.y - global_position.y) / (screenSize.y / extendedCameraScale)
