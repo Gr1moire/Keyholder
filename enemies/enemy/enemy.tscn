@@ -45,7 +45,7 @@ initial_velocity = 231.94
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 10.73
-color = Color( 1, 0, 0, 1 )
+color = Color( 0.698039, 0.0313726, 1, 1 )
 color_ramp = SubResource( 5 )
 
 [sub_resource type="Animation" id=12]
