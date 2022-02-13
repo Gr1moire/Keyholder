@@ -85,6 +85,7 @@ hue_variation_random = 0.67
 
 [node name="clé" type="Area2D"]
 script = ExtResource( 2 )
+group_to_attach_to = [ "Player", "enemy" ]
 fluctuations = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

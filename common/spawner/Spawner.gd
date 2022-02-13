@@ -14,6 +14,8 @@ export(bool)        var spawning: bool = true
 var parent: Node
 var timer: Timer
 
+onready var expload = preload("res://common/explode.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer = Timer.new()
@@ -38,6 +40,11 @@ func spawn():
 	enemy.position = self.position
 	parent.add_child(enemy)
 	emit_signal("spawn")
+	#spawn particules
+	var ex = expload.instance()
+	ex.emitting = true
+	ex.position = Vector2(0, 0)
+	add_child(ex)
 
 func start():
 	if timer.is_stopped():
