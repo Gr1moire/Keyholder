@@ -45,7 +45,7 @@ initial_velocity = 231.94
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 10.73
-color = Color( 1, 0, 0, 1 )
+color = Color( 0.698039, 0.0313726, 1, 1 )
 color_ramp = SubResource( 5 )
 
 [node name="enemy" type="KinematicBody2D" groups=["enemy", "wall"]]
@@ -74,7 +74,7 @@ process_material = SubResource( 3 )
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 2 )
 texture_scale = 0.13
-color = Color( 1, 0, 0, 1 )
+color = Color( 0.709804, 0, 1, 1 )
 energy = 0.8
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
