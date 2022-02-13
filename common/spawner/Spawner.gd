@@ -5,11 +5,11 @@ signal start
 signal spawn
 
 # Declare member variables here. Examples:
-const enemy_preloaded = preload("res://enemies/enemy/enemy.tscn")
+export(PackedScene) var enemy_preloaded = preload("res://enemies/enemy/enemy.tscn")
 
-export(float)    var interval: float = 1
-export(bool)     var spawning: bool = true
-export(NodePath) var parent_path: NodePath
+export(NodePath)    var parent_path: NodePath
+export(float)       var interval: float = 1
+export(bool)        var spawning: bool = true
 
 var parent: Node
 var timer: Timer
