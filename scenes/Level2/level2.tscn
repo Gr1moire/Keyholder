@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=1]
 [ext_resource path="res://common/spawner/navigation.tres" type="TileSet" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/common/Temple/props/doors/door3.png" type="Texture" id=13]
 [ext_resource path="res://common/spawner/Spawner.tscn" type="PackedScene" id=14]
 [ext_resource path="res://ui/GameOver.tscn" type="PackedScene" id=15]
+[ext_resource path="res://common/Portal.gd" type="Script" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Lose animation"
@@ -103,6 +104,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0, 1.41 ]
 }
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 23, 10 )
 
 [node name="Level2" type="WorldEnvironment"]
 environment = ExtResource( 7 )
@@ -306,6 +310,14 @@ interval = 4.0
 position = Vector2( 931, 339 )
 parent_path = NodePath("../YSort")
 interval = 4.0
+
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2( 528, 70 )
+script = ExtResource( 16 )
+nextScene = "res://scenes/endScene/endScene.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+shape = SubResource( 6 )
 
 [editable path="clé"]
 [editable path="UI/Label/GameOver"]
