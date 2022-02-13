@@ -21,6 +21,7 @@ func _process(_delta):
 	look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("fire") and can_fire:
+		Globals.camera.shake(0.1, 15, 2)
 		var bullet_instance = bullet.instance()
 		bullet_instance.position = $BulletPoint.global_position
 		bullet_instance.rotation_degrees = rotation_degrees

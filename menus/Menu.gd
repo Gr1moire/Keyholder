@@ -95,6 +95,8 @@ func fading_letter_finished():
 	$CanvasLayer/Control/MenuButton/Start.grab_focus()
 
 func _on_Start_pressed():
+	$MenuValidation.play()
+	yield(get_tree().create_timer(1.0), "timeout")
 	$MenuMusic.stop()
 	$FireSound.stop()
 	TransitionsAl.new_scene_dir = scene
@@ -102,6 +104,8 @@ func _on_Start_pressed():
 	TransitionsAl.load_state()
 
 func _on_Quit_pressed():
+	$MenuValidation.play()
+	yield(get_tree().create_timer(1.0), "timeout")
 	get_tree().quit()
 
 func _on_Start_focus_entered():
