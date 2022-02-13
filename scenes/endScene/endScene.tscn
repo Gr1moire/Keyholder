@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/common/font/Montserrat-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/endScene/endScene.gd" type="Script" id=2]
+[ext_resource path="res://menus/Menu.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 56
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 46
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 46
+font_data = ExtResource( 1 )
+
+[node name="EndGameCredit" type="Node2D"]
+script = ExtResource( 2 )
+scene_to_load = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="BigTitle" type="Label" parent="Node2D"]
+visible = false
+margin_top = 73.0
+margin_right = 1024.0
+margin_bottom = 189.0
+custom_fonts/font = SubResource( 1 )
+text = "Merci d'avoir joué :)"
+align = 1
+valign = 1
+percent_visible = -0.25
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creator" type="Label" parent="Node2D"]
+visible = false
+margin_top = 215.0
+margin_right = 1024.0
+margin_bottom = 296.0
+custom_fonts/font = SubResource( 1 )
+text = "CREATOR"
+align = 1
+max_lines_visible = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Patron" type="Label" parent="Node2D"]
+visible = false
+margin_top = 280.0
+margin_right = 1024.0
+margin_bottom = 361.0
+custom_fonts/font = SubResource( 1 )
+text = "Pascal - le patron"
+align = 1
+max_lines_visible = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullTextLeft" type="Label" parent="Node2D"]
+visible = false
+margin_left = 25.0
+margin_top = 394.0
+margin_right = 512.0
+margin_bottom = 571.0
+custom_fonts/font = SubResource( 2 )
+text = "Mathis - la mascotte
+Rayane - le DJ
+Lorien - l'artiste"
+percent_visible = -0.0227273
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullTextRight" type="Label" parent="Node2D"]
+visible = false
+margin_left = 511.0
+margin_top = 394.0
+margin_right = 1003.0
+margin_bottom = 571.0
+custom_fonts/font = SubResource( 3 )
+text = "Nolan - le dev
+Dorian - le dev 2
+Michaël - le dev 3"
+align = 2
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
