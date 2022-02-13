@@ -303,7 +303,6 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_3/CastlePilarRight"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_3/CastlePilarRight"]
@@ -325,7 +324,6 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_3/CastlePilarLeft"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_3/CastlePilarLeft"]
@@ -350,6 +348,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_2/CastlePilarRight"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
+frame = 5
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_2/CastlePilarRight"]
@@ -371,7 +370,6 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_2/CastlePilarLeft"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_2/CastlePilarLeft"]
@@ -396,6 +394,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_1/CastlePilarRight"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
+frame = 5
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_1/CastlePilarRight"]
@@ -417,7 +416,6 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pillar/Pillar_1/CastlePilarLeft"]
 position = Vector2( 0, -49 )
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Pillar/Pillar_1/CastlePilarLeft"]

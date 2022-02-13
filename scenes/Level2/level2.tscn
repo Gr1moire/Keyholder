@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=1]
 [ext_resource path="res://common/spawner/navigation.tres" type="TileSet" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scenes/Level1/level1.gd" type="Script" id=12]
 [ext_resource path="res://assets/common/Temple/props/doors/door3.png" type="Texture" id=13]
 [ext_resource path="res://common/spawner/Spawner.tscn" type="PackedScene" id=14]
+[ext_resource path="res://ui/GameOver.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Lose animation"
@@ -280,6 +281,9 @@ margin_top = 18.0
 margin_right = 206.0
 margin_bottom = 34.0
 
+[node name="GameOver" parent="UI/Label" instance=ExtResource( 15 )]
+pause_mode = 2
+
 [node name="Camera2D" parent="UI" instance=ExtResource( 3 )]
 pause_mode = 2
 position = Vector2( 534, 300 )
@@ -305,3 +309,4 @@ parent_path = NodePath("../YSort")
 interval = 4.0
 
 [editable path="clé"]
+[editable path="UI/Label/GameOver"]

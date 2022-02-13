@@ -70,7 +70,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-replayscene = "res://scenes/Level1/level1.tscn"
 
 [node name="TitreFin" type="Label" parent="."]
 margin_left = 277.0

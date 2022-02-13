@@ -19,6 +19,9 @@ func _start_lose_animation():
 	$AnimationPlayer/LoseTween.loseAnimation();
 	yield(get_tree().create_timer(1.0), "timeout");
 	$"clé".start_key_lose_animation();
+	yield(get_tree().create_timer(2.0), "timeout");
+	$UI/Label/GameOver.pop();
+	
 
 func _start_intro_animation(body):
 	if (body == $Obstacles/YSort/Player and not introDone):
