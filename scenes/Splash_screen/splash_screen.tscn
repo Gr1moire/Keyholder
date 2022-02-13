@@ -99,6 +99,9 @@ tracks/4/keys = {
 
 [node name="splash screen" type="Node2D"]
 script = SubResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 nextScene = "res://menus/Menu.tscn"
 
 [node name="Label" type="Label" parent="."]
@@ -110,7 +113,7 @@ __meta__ = {
 
 [node name="logo" type="Sprite" parent="Label"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 545, 322 )
+position = Vector2( 512, 322 )
 scale = Vector2( 0.889167, 0.760208 )
 texture = ExtResource( 1 )
 
