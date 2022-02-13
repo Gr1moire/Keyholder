@@ -13,6 +13,14 @@ const run_point = [	Vector2(105, 105),
 					Vector2(100, 520),
 					Vector2(100, 300)]
 
+const run_point_2 = [	Vector2(72, 268),
+						Vector2(257, 129),
+						Vector2(370, 413),
+						Vector2(672, 409),
+						Vector2(801, 126),
+						Vector2(950, 294),
+						Vector2(526, 106)]
+
 var path: Array = []
 var levelNavigation: Navigation2D = null
 var player = null
@@ -22,10 +30,12 @@ var has_key: bool = false
 var near_point: bool = true
 var flee_point: float = 0
 var is_disabled: bool = false
+var scene_name
 
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	scene_name = get_tree().current_scene.name
 	$AnimatedSprite.play("wak")
 	rng.randomize()
 	key = Globals.key
@@ -36,8 +46,13 @@ func _ready():
 		player = tree.get_nodes_in_group("player")[0]
 
 func _physics_process(delta):
-	if global_position.distance_to(run_point[flee_point]) < 50:
-		near_point = true
+
+	if scene_name == "Level1":
+		if global_position.distance_to(run_point[flee_point]) < 50:
+			near_point = true
+	elif scene_name == "Level2":
+		if global_position.distance_to(run_point_2[flee_point]) < 50:
+			near_point = true
 
 	if has_key:
 		if near_point:
@@ -62,7 +77,10 @@ func navigate():
 func generate_path():
 	if levelNavigation != null and player != null:
 		if has_key:
-			path = levelNavigation.get_simple_path(global_position, run_point[flee_point], false)
+			if scene_name == "Level1":
+				path = levelNavigation.get_simple_path(global_position, run_point[flee_point], false)
+			elif scene_name == "Level2":
+				path = levelNavigation.get_simple_path(global_position, run_point_2[flee_point], false)
 		else:
 			path = levelNavigation.get_simple_path(global_position, player.global_position, false)
 
@@ -70,7 +88,10 @@ func move():
 	velocity = move_and_slide(velocity)
 
 func get_best_flee():
-	return rng.randf_range(0, 7)
+	if scene_name == "Level1":
+		return rng.randf_range(0, 7)
+	elif scene_name == "Level2":
+		return rng.randf_range(0, 6)
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("bullet") and not dead:
