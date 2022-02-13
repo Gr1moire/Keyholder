@@ -62,7 +62,6 @@ tracks/0/keys = {
 [node name="Level1" type="WorldEnvironment"]
 environment = SubResource( 1 )
 script = ExtResource( 10 )
-timeout = 20.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.176471, 0.152941, 0.290196, 1 )
@@ -181,26 +180,17 @@ scale = Vector2( 0.1, 0.1 )
 [node name="Blue Fire4" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 744, 94 )
 
-[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire4" index="0"]
-frame = 4
-
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire4/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Blue Fire5" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 96, 504 )
 
-[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire5" index="0"]
-frame = 4
-
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire5/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Blue Fire6" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 920, 506 )
-
-[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire6" index="0"]
-frame = 4
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire6/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )

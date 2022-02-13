@@ -57,7 +57,7 @@ show_behind_parent = true
 position = Vector2( 0.0429001, -13.4205 )
 frames = SubResource( 1 )
 animation = "New Anim"
-frame = 5
+frame = 4
 playing = true
 
 [node name="FlickeringLight" type="Light2D" parent="Blue Fire Sprite"]
@@ -74,6 +74,7 @@ script = ExtResource( 7 )
 [node name="ConstantNoise" type="AudioStreamPlayer2D" parent="Blue Fire Sprite"]
 position = Vector2( -0.264214, 13.4062 )
 stream = ExtResource( 8 )
+volume_db = 13.805
 autoplay = true
 max_distance = 500.0
 attenuation = 4.43827
