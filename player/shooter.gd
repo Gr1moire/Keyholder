@@ -11,6 +11,13 @@ func _process(_delta):
 	
 	if Input.is_action_pressed("fire") and can_fire:
 		Globals.camera.shake(0.1, 15, 2)
+		var random = rand_range(0, 3)
+		if random <= 1:
+			$Shoot1.play()
+		elif random <= 2:
+			$Shoot2.play()
+		else:
+			$Shoot3.play()
 		var bullet_instance = bullet.instance()
 		bullet_instance.position = $BulletPoint.global_position
 		bullet_instance.rotation_degrees = rotation_degrees
