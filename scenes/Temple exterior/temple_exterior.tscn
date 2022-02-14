@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/common/exterior/TownTilesett.tres" type="TileSet" id=1]
 [ext_resource path="res://player/PlayerExterior.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://assets/common/light.png" type="Texture" id=11]
 [ext_resource path="res://player/EPressedBetter2.png" type="Texture" id=12]
 [ext_resource path="res://scenes/Temple exterior/temple_exterior.gd" type="Script" id=13]
+[ext_resource path="res://assets/common/pixel-key.png" type="Texture" id=14]
+[ext_resource path="res://assets/common/font/FairyDustB.ttf" type="DynamicFontData" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 23, 12.5 )
@@ -32,6 +34,25 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/common/font/FairyDustB.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 56
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
 
 [node name="exterior" type="Node2D"]
 script = ExtResource( 13 )
@@ -539,5 +560,70 @@ visible = false
 position = Vector2( 418, 111 )
 scale = Vector2( 2.04545, 2.16667 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
+
+[node name="Control" type="Control" parent="."]
+margin_left = -57.0
+margin_top = -19.0
+margin_right = 980.0
+margin_bottom = 597.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Control"]
+margin_left = 363.0
+margin_top = 56.0
+margin_right = 703.0
+margin_bottom = 146.0
+custom_fonts/font = SubResource( 6 )
+text = "Key of Success"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="MenuButton" parent="Control"]
+margin_right = 12.0
+margin_bottom = 20.0
+focus_mode = 2
+
+[node name="Start" type="Button" parent="Control/MenuButton"]
+margin_left = 284.0
+margin_top = 219.0
+margin_right = 435.0
+margin_bottom = 279.0
+focus_neighbour_left = NodePath("../Quit")
+custom_colors/font_color_focus = Color( 0.996078, 1, 0.298039, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+text = "Play"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="Control/MenuButton"]
+margin_left = 505.0
+margin_top = 219.0
+margin_right = 659.0
+margin_bottom = 283.0
+focus_neighbour_right = NodePath("../Start")
+custom_colors/font_color_focus = Color( 0.996078, 1, 0.298039, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+text = "Quit"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyStart" type="Sprite" parent="."]
+position = Vector2( 305, 201 )
+scale = Vector2( 0.0322266, 0.0351563 )
+texture = ExtResource( 14 )
+
+[node name="KeyQuit" type="Sprite" parent="."]
+position = Vector2( 524, 201 )
+scale = Vector2( 0.0322266, 0.0351563 )
+texture = ExtResource( 14 )
