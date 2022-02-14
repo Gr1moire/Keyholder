@@ -162,7 +162,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 2, 2.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -80.0, -15.0 ]
+"values": [ -80.0, -5.0 ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("SceneSound:playing")
@@ -772,7 +772,7 @@ volume_db = -10.0
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
-volume_db = -15.0
+volume_db = -10.0
 
 [node name="Control" type="Control" parent="."]
 margin_left = -58.0

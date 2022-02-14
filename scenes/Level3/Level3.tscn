@@ -81,7 +81,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 10.3, 30.1, 37.6, 45.8 ),
+"times": PoolRealArray( 0, 10.3, 30.1, 37.6, 41.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -107,14 +107,17 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 10.6, 29.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 10.6, 29.8, 41.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "start"
 }, {
 "args": [  ],
 "method": "stop"
+}, {
+"args": [  ],
+"method": "start"
 } ]
 }
 tracks/2/type = "method"
@@ -124,7 +127,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 19.8, 37.9, 46.4 ),
+"times": PoolRealArray( 19.8, 37.9, 41.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -144,7 +147,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 10.2, 29.9, 37.9, 46.5 ),
+"times": PoolRealArray( 0, 10.2, 29.9, 37.9, 41.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -170,7 +173,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 10.2, 30.1, 46.4 ),
+"times": PoolRealArray( 10.2, 30.1, 41.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -190,7 +193,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 29.9, 46.5 ),
+"times": PoolRealArray( 0, 29.9, 41.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -396,7 +399,7 @@ position = Vector2( -1199, -31 )
 
 [node name="Blue Fire Sprite" parent="YSort/obstacles/Blue Fire" index="0"]
 position = Vector2( 0, -15 )
-frame = 3
+frame = 4
 
 [node name="FlickeringLight" parent="YSort/obstacles/Blue Fire/Blue Fire Sprite" index="0"]
 position = Vector2( -0.521484, 16.7103 )

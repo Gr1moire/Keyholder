@@ -1,22 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/common/font/Montserrat-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/endScene/endScene.gd" type="Script" id=2]
 [ext_resource path="res://menus/Menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/common/sound/sfx_shocked.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 56
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 46
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 46
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 1 )
 
 [node name="EndGameCredit" type="Node2D"]
@@ -25,7 +15,7 @@ scene_to_load = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="BigTitle" type="Label" parent="Node2D"]
+[node name="t1" type="Label" parent="Node2D"]
 visible = false
 margin_top = 73.0
 margin_right = 1024.0
@@ -39,72 +29,62 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Creator" type="Label" parent="Node2D"]
+[node name="t2" type="Label" parent="Node2D"]
 visible = false
-margin_top = 215.0
-margin_right = 1024.0
-margin_bottom = 296.0
+margin_left = -13.0
+margin_top = 191.0
+margin_right = 1011.0
+margin_bottom = 272.0
 custom_fonts/font = SubResource( 1 )
-text = "CREATOR"
+text = "On finira sûrement le jeu un jour"
 align = 1
 max_lines_visible = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Patron" type="Label" parent="Node2D"]
+[node name="t3" type="Label" parent="Node2D"]
 visible = false
-margin_top = 298.0
-margin_right = 1024.0
-margin_bottom = 379.0
+margin_left = -4.0
+margin_top = 283.0
+margin_right = 1020.0
+margin_bottom = 364.0
 custom_fonts/font = SubResource( 1 )
-text = "Pascal - le patron"
+text = "Mais là on va juste aller dormir"
 align = 1
 max_lines_visible = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FullTextLeft" type="Label" parent="Node2D"]
+[node name="t4" type="Label" parent="Node2D"]
 visible = false
-margin_left = 25.0
-margin_top = 394.0
-margin_right = 512.0
-margin_bottom = 571.0
-custom_fonts/font = SubResource( 2 )
-text = "Mathis - la mascotte
-Rayane - le DJ
-Lorien - l'artiste"
-max_lines_visible = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="FullTextRight" type="Label" parent="Node2D"]
-visible = false
-margin_left = 511.0
-margin_top = 394.0
-margin_right = 1003.0
-margin_bottom = 571.0
-custom_fonts/font = SubResource( 3 )
-text = "Nolan - le dev 1
-Dorian - le chieur 2
-Michaël - le dev 3"
-align = 2
-max_lines_visible = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Chapipi" type="Label" parent="Node2D"]
-visible = false
-margin_top = 573.0
-margin_right = 1024.0
-margin_bottom = 599.0
-custom_fonts/font = SubResource( 4 )
-text = "Mathieu Champely - parcequ'il a la quote"
+margin_left = -3.0
+margin_top = 370.0
+margin_right = 1021.0
+margin_bottom = 451.0
+custom_fonts/font = SubResource( 1 )
+text = "Voilà, voilà."
 align = 1
 max_lines_visible = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="t5" type="Label" parent="Node2D"]
+visible = false
+margin_left = 7.0
+margin_top = 494.0
+margin_right = 1031.0
+margin_bottom = 575.0
+custom_fonts/font = SubResource( 1 )
+text = "Bisous."
+align = 1
+max_lines_visible = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="appear" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0

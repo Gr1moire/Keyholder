@@ -240,12 +240,12 @@ position = Vector2( 288, 0 )
 [node name="StonePilar" parent="YSort/obstacles2" instance=ExtResource( 9 )]
 position = Vector2( 369, 333 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="DoorAnim" type="AnimationPlayer" parent="."]
 pause_mode = 2
 "anims/Door Appear" = SubResource( 3 )
 "anims/Light Appears" = SubResource( 4 )
 
-[node name="LoseTween" type="Tween" parent="AnimationPlayer"]
+[node name="LoseTween" type="Tween" parent="DoorAnim"]
 pause_mode = 2
 script = ExtResource( 11 )
 
