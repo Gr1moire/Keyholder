@@ -33,7 +33,7 @@ func _physics_process(delta):
 
 func handle_mouse(input):
 	mouse_position = get_viewport().get_mouse_position()
-	screen_width = get_viewport().size.x / 4
+	screen_width = global_position.x
 	print(input)
 	if mouse_position.x > screen_width:
 		if input.x != 0 or input.y != 0:
