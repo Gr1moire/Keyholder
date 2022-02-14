@@ -176,9 +176,6 @@ position = Vector2( 424, 456 )
 [node name="Blue Fire3" parent="Obstacles/YSort" instance=ExtResource( 5 )]
 position = Vector2( 263, 96 )
 
-[node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire3" index="0"]
-frame = 2
-
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire3/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
 
@@ -186,7 +183,7 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 744, 94 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire4" index="0"]
-frame = 3
+frame = 1
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire4/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -195,7 +192,7 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 96, 504 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire5" index="0"]
-frame = 3
+frame = 1
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire5/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -204,13 +201,23 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 920, 506 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire6" index="0"]
-frame = 3
+frame = 1
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire6/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Player" parent="Obstacles/YSort" instance=ExtResource( 7 )]
 position = Vector2( 497, 525 )
+
+[node name="Light2D" type="Light2D" parent="Obstacles/YSort/Player"]
+position = Vector2( -3, 39 )
+scale = Vector2( 0.324707, 0.324707 )
+texture = ExtResource( 3 )
+texture_scale = 4.2
+color = Color( 0.243137, 0.898039, 0.964706, 1 )
+energy = 0.51
+shadow_enabled = true
+shadow_filter = 4
 
 [node name="Lights" type="Node2D" parent="."]
 

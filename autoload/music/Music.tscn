@@ -28,8 +28,8 @@ script = SubResource( 1 )
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -7.866
+volume_db = -15.0
 
 [node name="LevelSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = 2.63
+volume_db = -15.0

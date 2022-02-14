@@ -9,10 +9,14 @@ func _ready():
 	$AnimationPlayer.connect("animation_finished", self, "_on_door_appeared");
 	if (get_tree().get_current_scene().get_name() == "Level1"):
 		$"Intro Event".connect("body_entered", self, "_start_intro_animation");	
-	$AnimationPlayer.play("Door Appear");
+	if (get_tree().current_scene.name != "Level1"):
+		$AnimationPlayer.play("Door Appear");
+	if (get_tree().current_scene.name == "Level3"):
+		$AnimationPlayer.play("Spawn activation");
 
 func _on_door_appeared(animName):
 	if (animName == "Door Appear"):
+		$Door2/Rumble.play();
 		$Door2/Light2D2.enabled = true;
 		$Door2.turn_light_on();
 		doorOpened = true;
@@ -34,3 +38,4 @@ func _start_intro_animation(body):
 			Music.playLevelMusic();
 		$Spawner.start();
 		$Spawner2.start();
+		$AnimationPlayer.play("Door Appear");	

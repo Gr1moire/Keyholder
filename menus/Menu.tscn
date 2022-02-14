@@ -481,6 +481,9 @@ __meta__ = {
 [node name="MenuButton" type="MenuButton" parent="CanvasLayer/Control"]
 margin_right = 12.0
 margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Start" type="Button" parent="CanvasLayer/Control/MenuButton"]
 margin_left = 261.0

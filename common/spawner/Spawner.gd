@@ -49,8 +49,12 @@ func spawn():
 func start():
 	if timer.is_stopped():
 		timer.start()
+		$Particles2D.emitting = true;
+		$AnimationPlayer.play("Light appear");
 		emit_signal("start")
 
 func stop():
 	timer.stop()
+	$Particles2D.emitting = false;
+	$AnimationPlayer.play_backwards("Light appear");
 	emit_signal("stop")

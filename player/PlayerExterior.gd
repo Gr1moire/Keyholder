@@ -3,8 +3,9 @@ extends KinematicBody2D
 export var MAX_SPEED = 300
 export var ACCELERATION = 6000
 export var FRICTION = 2000
+export var canMove = false;
+ 
 
-var canMove = true;
 var canInteract = false;
 
 var velocity = Vector2.ZERO

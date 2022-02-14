@@ -50,14 +50,13 @@ color_ramp = SubResource( 4 )
 hue_variation_random = 0.58
 
 [node name="Blue Fire" type="Node2D"]
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Blue Fire Sprite" type="AnimatedSprite" parent="."]
 show_behind_parent = true
 position = Vector2( 0.0429001, -13.4205 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "New Anim"
-frame = 4
 playing = true
 
 [node name="FlickeringLight" type="Light2D" parent="Blue Fire Sprite"]
