@@ -102,7 +102,7 @@ script = SubResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
-nextScene = "res://menus/Menu.tscn"
+nextScene = "res://scenes/Temple exterior/temple_exterior.tscn"
 
 [node name="Label" type="Label" parent="."]
 margin_right = 40.0

@@ -81,7 +81,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 59.9 ),
+"times": PoolRealArray( 0.6, 60 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0.556863, 0.411765, 0.101961, 0 ), Color( 1, 1, 0.5, 1 ) ]
@@ -89,18 +89,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "Light Appears"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Door2/Light2D2:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.41 ]
-}
 
 [sub_resource type="Animation" id=8]
 resource_name = "Spawn activation"
@@ -313,9 +301,6 @@ position = Vector2( 22, -7 )
 
 [node name="Lights" type="Node2D" parent="."]
 
-[node name="Door2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 528, 64 )
-
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 13 )]
@@ -384,7 +369,6 @@ position = Vector2( -1199, -31 )
 
 [node name="Blue Fire Sprite" parent="YSort/obstacles/Blue Fire" index="0"]
 position = Vector2( 0, -15 )
-frame = 1
 
 [node name="FlickeringLight" parent="YSort/obstacles/Blue Fire/Blue Fire Sprite" index="0"]
 position = Vector2( -0.521484, 16.7103 )
@@ -450,6 +434,10 @@ nextScene = "res://scenes/endScene/endScene.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 position = Vector2( -1, 18 )
 shape = SubResource( 7 )
+
+[node name="Door2" parent="." instance=ExtResource( 8 )]
+self_modulate = Color( 0.556863, 0.411765, 0.101961, 0 )
+position = Vector2( 529, 66 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 

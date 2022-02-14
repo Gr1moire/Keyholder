@@ -10,6 +10,7 @@ func _ready():
 	if (get_tree().get_current_scene().get_name() == "Level1"):
 		$"Intro Event".connect("body_entered", self, "_start_intro_animation");	
 	if (get_tree().current_scene.name != "Level1"):
+		print("bjr");
 		$AnimationPlayer.play("Door Appear");
 	if (get_tree().current_scene.name == "Level3"):
 		$AnimationPlayer.play("Spawn activation");

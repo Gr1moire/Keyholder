@@ -103,6 +103,7 @@ func trigger_death():
 	$Particles2D.emitting = true
 	$AnimatedSprite.visible = false
 	$Collision.queue_free()
+	$DeathSound.play()
 	Globals.camera.shake(0.2, 15, 8)
 	dead = true
 	$AnimationPlayer.play("Shrink light")
