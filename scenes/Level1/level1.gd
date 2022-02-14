@@ -13,9 +13,9 @@ func _ready():
 
 func _on_door_appeared(animName):
 	if (animName == "Door Appear"):
-		$Door2/Light2D2.enabled = true
-		$AnimationPlayer.play("Light Appears")
-		doorOpened = true
+		$Door2/Light2D2.enabled = true;
+		$Door2.turn_light_on();
+		doorOpened = true;
 		
 func _start_lose_animation():
 	$AnimationPlayer/LoseTween.loseAnimation();
@@ -24,7 +24,6 @@ func _start_lose_animation():
 	yield(get_tree().create_timer(2.0), "timeout");
 	$UI/Label/GameOver.pop();
 	
-
 func _start_intro_animation(body):
 	if (body == $Obstacles/YSort/Player and not introDone):
 		introDone = true;

@@ -1,0 +1,37 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sur le mur d'enceinte du temple, une inscription attire votre attention :"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "« Tous possèdent la [color=#f0d78e]Clé[/color], mais combien atteignent la [color=#f0d78e]Porte[/color] ? »\n« Et jamais un preu ne la trouva sans prendre de risque. »\n« Ceux qui sauront garder leur [color=#f0d78e]clé[/color] loin des [color=#9e6af2]esprits malins[/color] obtiendront le sésame tant recherché »\n« Mais les autres rejoindront leurs rangs. »"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Vous remarquez également d'autres inscriptions dans une langue que vous ne semblez pas savoir lire\nBien que cette langue vous soit inconnue, plusieurs phrases étranges résonnent dans votre esprit : \n«  [color=#f0d78e]Contrôles :[/color] Z, Q, S, D pour se déplacer. Souris pour viser. Maintenir le clic gauche pour tirer. E pour interagir. »\n« Survivez pendant [color=#f0d78e]une minute et trente secondes[/color] en protégeant votre [color=#f0d78e]clé[/color] des [color=#9e6af2]assaillants qui voudront vous la voler[/color]. »\n« Mais attention, la [color=#f0d78e]clé[/color] se [color=#9e6af2]corrompt rapidement[/color] quand elle n'est pas proche de vous. »\n« En haut à gauche de l'écran se trouve une jauge représentant l'état de la [color=#f0d78e]clé[/color], vous pouvez aussi garder un oeil sur sa lumière, moins elle brille, moins elle est en bon état. »\n« [color=#f0d78e]Une fois la porte illuminée, rendez-vous y rapidement ![/color] »"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Après toute cette lecture, vous finissez par franchir la porte et vous engoufrer à l'intérieur de l'édifice."
+		},
+		{
+			"emit_signal": "ended",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1644792517.json",
+		"name": "Intro"
+	}
+}

@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/common/light.png" type="Texture" id=1]
+[ext_resource path="res://assets/common/Temple/props/doors/door3.png" type="Texture" id=2]
+[ext_resource path="res://common/Door.gd" type="Script" id=3]
+[ext_resource path="res://player/EPressedBetter2.png" type="Texture" id=4]
+
+[sub_resource type="OccluderPolygon2D" id=5]
+cull_mode = 2
+polygon = PoolVector2Array( -32, -20, -32, -25, -27, -32, -16, -40, -1, -44, 13, -41, 21, -38, 26, -33, 30, -29, 32, -24, 32, 21, 23, 21, 22, 19, 16, 19, 16, 16, 13, 11, 13, -7, 13, -22, 5, -27, -4, -27, -11, -25, -13, -23, -13, 16, -16, 16, -16, 19, -21, 19, -23, 21, -32, 21 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 11, 12 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 11, 0, 11, 12 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=8]
+resource_name = "Light appears"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.75 ]
+}
+
+[node name="Door2" type="Sprite"]
+modulate = Color( 34.1, 36.05, 38.15, 1 )
+self_modulate = Color( 0.556863, 0.411765, 0.101961, 0 )
+position = Vector2( 529, 61 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( -1, 1 )
+occluder = SubResource( 5 )
+
+[node name="Light2D2" type="Light2D" parent="."]
+light_mask = 7
+position = Vector2( 1, -20 )
+scale = Vector2( 0.318848, 0.950806 )
+texture = ExtResource( 1 )
+color = Color( 0.972549, 0.972549, 0.972549, 1 )
+energy = 0.0
+range_item_cull_mask = 3
+shadow_enabled = true
+
+[node name="layer" type="CanvasLayer" parent="."]
+
+[node name="PressE" type="AnimatedSprite" parent="layer"]
+visible = false
+light_mask = 512
+position = Vector2( 502, 57 )
+scale = Vector2( 3.35227, 2.625 )
+frames = SubResource( 7 )
+frame = 1
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Light appears" = SubResource( 8 )

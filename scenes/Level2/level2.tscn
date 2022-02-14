@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=1]
 [ext_resource path="res://common/spawner/navigation.tres" type="TileSet" id=2]
@@ -12,7 +12,7 @@
 [ext_resource path="res://ui/default/key_life_gauge.tscn" type="PackedScene" id=10]
 [ext_resource path="res://common/animations/Tween.gd" type="Script" id=11]
 [ext_resource path="res://scenes/Level1/level1.gd" type="Script" id=12]
-[ext_resource path="res://assets/common/Temple/props/doors/door3.png" type="Texture" id=13]
+[ext_resource path="res://common/Door.tscn" type="PackedScene" id=13]
 [ext_resource path="res://common/spawner/Spawner.tscn" type="PackedScene" id=14]
 [ext_resource path="res://ui/GameOver.tscn" type="PackedScene" id=15]
 
@@ -68,10 +68,6 @@ tracks/1/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -10, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1, 2, 3, 4 )
 }
-
-[sub_resource type="OccluderPolygon2D" id=5]
-cull_mode = 2
-polygon = PoolVector2Array( -32, -20, -32, -25, -27, -32, -16, -40, -1, -44, 13, -41, 21, -38, 26, -33, 30, -29, 32, -24, 32, 21, 23, 21, 22, 19, 16, 19, 16, 16, 13, 11, 13, -7, 13, -22, 5, -27, -4, -27, -11, -25, -13, -23, -13, 16, -16, 16, -16, 19, -21, 19, -23, 21, -32, 21 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Door Appear"
@@ -197,25 +193,7 @@ range_item_cull_mask = 3
 shadow_enabled = true
 shadow_item_cull_mask = 3
 
-[node name="Door2" type="Sprite" parent="."]
-modulate = Color( 34.1, 36.05, 38.15, 1 )
-self_modulate = Color( 0.556863, 0.411765, 0.101961, 0 )
-position = Vector2( 529, 61 )
-texture = ExtResource( 13 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Door2"]
-position = Vector2( -1, 1 )
-occluder = SubResource( 5 )
-
-[node name="Light2D2" type="Light2D" parent="Door2"]
-light_mask = 7
-position = Vector2( 1, -19 )
-scale = Vector2( 0.318848, 0.950806 )
-texture = ExtResource( 4 )
-color = Color( 0.972549, 0.972549, 0.972549, 1 )
-energy = 0.0
-range_item_cull_mask = 3
-shadow_enabled = true
+[node name="Door2" parent="." instance=ExtResource( 13 )]
 
 [node name="YSort" type="YSort" parent="."]
 

@@ -1,11 +1,11 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/common/Temple/Tiles/temple.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/Temple/props/pilars/Stone_pilar_new.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/common/light.png" type="Texture" id=3]
 [ext_resource path="res://common/spawner/Spawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/common/fx/Blue fire/Blue Fire.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/common/Temple/props/doors/door3.png" type="Texture" id=6]
+[ext_resource path="res://common/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/camera/Camera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://common/cle/Cle.tscn" type="PackedScene" id=9]
@@ -27,10 +27,6 @@ fog_height_min = 85.5
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="OccluderPolygon2D" id=2]
-cull_mode = 2
-polygon = PoolVector2Array( -32, -20, -32, -25, -27, -32, -16, -40, -1, -44, 13, -41, 21, -38, 26, -33, 30, -29, 32, -24, 32, 21, 23, 21, 22, 19, 16, 19, 16, 16, 13, 11, 13, -7, 13, -22, 5, -27, -4, -27, -11, -25, -13, -23, -13, 16, -16, 16, -16, 19, -21, 19, -23, 21, -32, 21 )
-
 [sub_resource type="Animation" id=3]
 resource_name = "Door Appear"
 length = 60.0
@@ -41,26 +37,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 59.9 ),
+"times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0.556863, 0.411765, 0.101961, 0 ), Color( 1, 1, 0.5, 1 ) ]
+"values": [ Color( 0.556863, 0.411765, 0.101961, 0 ), Color( 1, 0.808462, 0.535156, 1 ) ]
 }
 
 [sub_resource type="Animation" id=4]
 resource_name = "Light Appears"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Door2/Light2D2:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.41 ]
-}
 
 [sub_resource type="GDScript" id=6]
 script/source = "extends Camera2D
@@ -193,7 +177,7 @@ position = Vector2( 424, 456 )
 position = Vector2( 263, 96 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire3" index="0"]
-frame = 2
+frame = 5
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire3/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -202,7 +186,7 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 744, 94 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire4" index="0"]
-frame = 3
+frame = 0
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire4/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -211,7 +195,7 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 96, 504 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire5" index="0"]
-frame = 3
+frame = 0
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire5/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
@@ -220,22 +204,13 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 920, 506 )
 
 [node name="Blue Fire Sprite" parent="Obstacles/YSort/Blue Fire6" index="0"]
-frame = 3
+frame = 0
 
 [node name="FlickeringLight" parent="Obstacles/YSort/Blue Fire6/Blue Fire Sprite" index="0"]
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Player" parent="Obstacles/YSort" instance=ExtResource( 7 )]
-position = Vector2( 494, 523 )
-
-[node name="Light2D" type="Light2D" parent="Obstacles/YSort/Player"]
-scale = Vector2( 0.324707, 0.324707 )
-texture = ExtResource( 3 )
-texture_scale = 4.2
-color = Color( 0.243137, 0.898039, 0.964706, 1 )
-energy = 0.51
-shadow_enabled = true
-shadow_filter = 4
+position = Vector2( 497, 525 )
 
 [node name="Lights" type="Node2D" parent="."]
 
@@ -287,25 +262,6 @@ texture = ExtResource( 3 )
 color = Color( 0.545098, 0.882353, 1, 1 )
 shadow_enabled = true
 
-[node name="Door2" type="Sprite" parent="."]
-modulate = Color( 34.1, 36.05, 38.15, 1 )
-self_modulate = Color( 0.556863, 0.411765, 0.101961, 0 )
-position = Vector2( 498, 46 )
-texture = ExtResource( 6 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Door2"]
-occluder = SubResource( 2 )
-
-[node name="Light2D2" type="Light2D" parent="Door2"]
-light_mask = 7
-position = Vector2( 1, -19 )
-scale = Vector2( 0.318848, 0.950806 )
-texture = ExtResource( 3 )
-color = Color( 0.972549, 0.972549, 0.972549, 1 )
-energy = 0.0
-range_item_cull_mask = 3
-shadow_enabled = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
 "anims/Door Appear" = SubResource( 3 )
@@ -321,6 +277,9 @@ camera = NodePath("../../UI/introCam")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
+
+[node name="Door2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 499, 45 )
 
 [node name="Spawner" parent="." instance=ExtResource( 4 )]
 position = Vector2( 298, 490 )

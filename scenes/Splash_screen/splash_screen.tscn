@@ -125,10 +125,10 @@ margin_right = 1191.0
 margin_bottom = 482.0
 theme = SubResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[i] « On est acteur de sa propre réussite »[/i]
+bbcode_text = "[i] « On est l'acteur de sa propre réussite »[/i]
 
 							"
-text = " « On est acteur de sa propre réussite »
+text = " « On est l'acteur de sa propre réussite »
 
 							"
 __meta__ = {

@@ -20,10 +20,6 @@ func _ready():
 
 func _process(_delta):
 	look_at(get_global_mouse_position())
-	if canInteract and not $PressE.visible:
-		$PressE.visible = true;
-	elif not canInteract and $PressE.visible:
-		$PressE.visible = true; 
 	
 	if Input.is_action_pressed("fire") and can_fire:
 		Globals.camera.shake(0.1, 15, 2)
