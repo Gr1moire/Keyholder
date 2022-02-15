@@ -30,15 +30,12 @@ func _ready():
 
 func _physics_process(delta):
 
-	if scene_name == "Level1":
-		if global_position.distance_to(Globals.run_point[flee_point]) < 50:
-			near_point = true
-	elif scene_name == "Level2":
-		if global_position.distance_to(Globals.run_point_2[flee_point]) < 50:
-			near_point = true
-	elif scene_name == "Level3":
-		if global_position.distance_to(Globals.run_point_3[flee_point]) < 50:
-			near_point = true
+	if scene_name == "Level1" and global_position.distance_to(Globals.run_point[flee_point]) < 50:
+		near_point = true
+	elif scene_name == "Level2" and global_position.distance_to(Globals.run_point_2[flee_point]) < 50:
+		near_point = true
+	elif scene_name == "Level3" and global_position.distance_to(Globals.run_point_3[flee_point]) < 50:
+		near_point = true
 
 	if has_key:
 		if near_point:
@@ -47,7 +44,7 @@ func _physics_process(delta):
 		if not is_disabled:
 			$Collision.disabled = true
 			is_disabled = true
-	
+
 	if player and levelNavigation:
 		generate_path()
 		navigate()

@@ -1,17 +1,12 @@
 extends KinematicBody2D
 
-export var MAX_SPEED = 300
-export var ACCELERATION = 6000
-export var FRICTION = 2000
-var canInteract = false;
+const MAX_SPEED = 300
+const ACCELERATION = 6000
+const FRICTION = 2000
 
 var velocity = Vector2.ZERO
 var key
 var has_key: bool = false
-
-var x_percent
-var mouse_position
-var screen_width
 
 func _ready():
 	key = Globals.key
@@ -32,21 +27,28 @@ func _physics_process(delta):
 	move()
 
 func handle_mouse(input):
-	mouse_position = get_viewport().get_mouse_position()
-	screen_width = global_position.x
-	print(input)
-	if mouse_position.x > screen_width:
+	var angle = self.get_local_mouse_position().angle()
+	
+	if angle > -1 and angle < 1:
 		if input.x != 0 or input.y != 0:
 			$AnimatedSprite.play("RIGHTWALK")
 		elif input == Vector2.ZERO:
 			$AnimatedSprite.play("RIGHT")
-			
-	else:
+	if angle > 2 or angle < -2:
 		if input.x != 0 or input.y != 0:
 			$AnimatedSprite.play("LEFTWALK")
 		elif input == Vector2.ZERO:
 			$AnimatedSprite.play("LEFT")
-
+	if angle > -2 and angle < -1:
+		if input.x != 0 or input.y != 0:
+			$AnimatedSprite.play("UPWALK")
+		elif input == Vector2.ZERO:
+			$AnimatedSprite.play("UP")
+	if angle > 1 and angle < 2:
+		if input.x != 0 or input.y != 0:
+			$AnimatedSprite.play("DOWNWALK")
+		elif input == Vector2.ZERO:
+			$AnimatedSprite.play("DOWN")
 		
 func move():
 	velocity = move_and_slide(velocity)
