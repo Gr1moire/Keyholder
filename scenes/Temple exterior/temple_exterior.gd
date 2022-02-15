@@ -42,17 +42,17 @@ func fading_letter_finished():
 
 func _on_Start_pressed():
 	if !selectionMade:
+		selectionMade = true;				
 		$MenuValidation.play()
 		yield(get_tree().create_timer(1.0), "timeout")
 		$AnimationPlayer.play("MenuFade");
-		selectionMade = true;
 
 
 func _on_Quit_pressed():
 	if !selectionMade:
+		selectionMade = true;		
 		$MenuValidation.play()
 		yield(get_tree().create_timer(1.0), "timeout")
-		selectionMade = true;
 		get_tree().quit()
 
 func _on_Start_focus_entered():

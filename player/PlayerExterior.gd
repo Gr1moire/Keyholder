@@ -16,27 +16,29 @@ func _ready():
 
 
 func _physics_process(delta):
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	input_vector = input_vector.normalized()
 	
-	if input_vector != Vector2.ZERO:
-		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION *delta)
-	else:
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)	
-	
-	if input_vector == Vector2.ZERO and canMove:
-		if keep_direction == "RIGHT":
-			$AnimatedSprite.play("IDLERIGHT")
-		if keep_direction == "LEFT":
-			$AnimatedSprite.play("IDLELEFT")
-		if keep_direction == "UP":
-			$AnimatedSprite.play("IDLEUP")
-		if keep_direction == "DOWN":
-			$AnimatedSprite.play("IDLEDOWN")
-
 	if canMove:
+	
+		var input_vector = Vector2.ZERO
+		input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+		input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+		input_vector = input_vector.normalized()
+	
+		if input_vector != Vector2.ZERO:
+			velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION *delta)
+		else:
+			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)	
+	
+		if input_vector == Vector2.ZERO and canMove:
+			if keep_direction == "RIGHT":
+				$AnimatedSprite.play("IDLERIGHT")
+			if keep_direction == "LEFT":
+				$AnimatedSprite.play("IDLELEFT")
+			if keep_direction == "UP":
+				$AnimatedSprite.play("IDLEUP")
+			if keep_direction == "DOWN":
+				$AnimatedSprite.play("IDLEDOWN")
+
 		if input_vector.x == 1:
 			$AnimatedSprite.play("WALKRIGHT")
 			keep_direction = "RIGHT"
@@ -50,7 +52,6 @@ func _physics_process(delta):
 			$AnimatedSprite.play("WALKUP")
 			keep_direction = "UP"
 
-	if canMove:
 		move()
 
 func move():
