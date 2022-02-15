@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/common/font/Montserrat-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/endScene/endScene.gd" type="Script" id=2]
-[ext_resource path="res://menus/Menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Temple exterior/temple_exterior.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/common/sound/sfx_shocked.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
