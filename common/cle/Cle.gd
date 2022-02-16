@@ -1,7 +1,7 @@
 extends "res://common/smooth_movement.gd"
 
 # Declare member variables here. Examples:
-var attached_to: Node2D = null
+var attached_to: WeakRef
 onready var noise = OpenSimplexNoise.new()
 export(Array, String) var group_to_attach_to = ["Player"]
 export(float) var max_health = 300.0;
@@ -26,8 +26,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (attached_to and !lose):
-		self.move(attached_to.position, delta * 2.3)
+	if (attached_to and attached_to.get_ref() and !lose):
+		self.move(attached_to.get_ref().position, delta * 2.3)
 	time += delta;
 	var current_energy = clamp((health / max_health) * max_energy, 0, max_energy);
 	var fluctuation_state = fluctuations.interpolate(health / max_health)
@@ -40,7 +40,7 @@ func _physics_process(delta):
 		lose = true;
 		emit_signal("zero_health");
 		pass
-	if not lose and (not attached_to or not attached_to.is_in_group("Player")):
+	if not lose and (!attached_to or !attached_to.get_ref() or not attached_to.get_ref().is_in_group("Player")):
 		health -= 1 * delta * hp_drain_per_second
 		emit_signal("value_changed");
 	elif not lose:
@@ -50,14 +50,14 @@ func _physics_process(delta):
 
 
 func transfer_ownership(body: Node2D):
-	attached_to = body
+	attached_to = weakref(body)
 	body.has_key = true
 
 func _on_RigidBody2D_body_entered(body: Node2D):
 	for group in group_to_attach_to:
-		if body.is_in_group(group) and attached_to == null:
+		if body.is_in_group(group) and (!attached_to or !attached_to.get_ref()):
 			self.transfer_ownership(body)
-			self.move(attached_to.position)
+			self.move(attached_to.get_ref().position)
 				
 func start_key_lose_animation():
 	$AnimationPlayer.play("Lose animation");
