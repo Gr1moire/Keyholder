@@ -22,3 +22,36 @@ Notre concept tourne autour d'un personnage pénétrant dans un temple lui prés
 Pour Keyholder nous voulions une ambiance un peu mystérieuse mais également punchy que nous avons fait transparaître grâce à la musique, et à des feedbacks lorsque le joueur tire et tue un ennemi. Nous avons également donné une grande importance au travail des ombres et des sources de lumière pour donner de la profondeur à notre jeu et le rendre visuellement plaisant pour le joueur.
 
 En terme d'inspiration, nous pourrions citer Yoshi's Island pour le gameplay, nous retrouvons une mécanique similaire à celle de la protection de Bébé Mario avec la clé. 
+
+## Téléchargement
+
+**TBA**
+
+Nous avons uploadé le jeu sur Itch.io. Celui-ci peut être téléchargé gratuitement, il suffit d'entrer 0€ au moment du téléchargement.
+**Attention,** les certificats de signature de code sont trop chers pour des étudiants, Windows aura donc tendance à prévenir d'un risque potentiel. C'est evidemment un faux positif.
+
+## Crédits
+
+**Project Lead:**
+- [Pascal Betti](https://github.com/Gr1moire)
+
+**Programmers:**
+- [Nolan Kijas](https://github.com/Spacelenin),
+- [Pascal Betti](https://github.com/Gr1moire),
+- [Rayane Djellabi](https://github.com/Imnibis)
+- [Michael Veillet-Guillem](https://github.com/STMiki)
+- [Dorian Collin]()
+
+**Game Artist:**
+- [Lorien Remy](https://github.com/LorienEpitech)
+
+**Level Design:**
+- [Pascal Betti](https://github.com/Gr1moire)
+
+**Trailer claqué**
+- [Mathis Clanche](https://github.com/matmansn)
+
+## Remerciements:
+- [Szadi Art](https://szadiart.itch.io/) pour le tileset 2D Magic Lands Dungeon 1.
+- [Cainos](https://cainos.itch.io/) pour le tileset Pixel Art Top Down - Basic.
+- [Fato Shadow](https://opengameart.org/users/fatoshadow?) pour la musique "Pray for Satan".
