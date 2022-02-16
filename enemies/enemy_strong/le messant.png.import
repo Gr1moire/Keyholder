@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Messant.png-1b2c77c08d467cc0971293fefce932b8.stex"
+path="res://.import/le messant.png-c404fae6d3b86c57c7f5ff85c713388b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/enemy/Messant.png"
-dest_files=[ "res://.import/Messant.png-1b2c77c08d467cc0971293fefce932b8.stex" ]
+source_file="res://enemies/enemy_strong/le messant.png"
+dest_files=[ "res://.import/le messant.png-c404fae6d3b86c57c7f5ff85c713388b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -1,9 +1,8 @@
 extends KinematicBody2D
-	
 
 export(int) var SPEED: int = 200
-var velocity: Vector2 = Vector2.ZERO
 
+var velocity: Vector2 = Vector2.ZERO
 var path: Array = []
 var levelNavigation: Navigation2D = null
 var player = null
@@ -80,9 +79,16 @@ func get_best_flee():
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("bullet") and not dead:
-		trigger_death()
-		if has_key:
-			key.attached_to = null
+		$LifeController.took_damage(1)
+		if $LifeController.life == 0:
+			trigger_death()
+			if has_key:
+				key.attached_to = null
+		else:
+			var tmp_modulate = $AnimatedSprite.modulate
+			$AnimatedSprite.modulate = Color(255, 255, 255, 1)
+			yield(get_tree().create_timer(0.2), "timeout");
+			$AnimatedSprite.modulate = tmp_modulate
 
 func trigger_death():
 	$Particles2D.emitting = true

@@ -273,6 +273,7 @@ position = Vector2( 534, 300 )
 position = Vector2( 256, 121 )
 parent_path = NodePath("../YSort")
 interval = 2.0
+secondary_spawning = false
 
 [node name="Spawner2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 801, 124 )
