@@ -25,6 +25,26 @@
 radius = 9.0
 height = 18.0
 
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 20 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 20 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 20 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 20 )
+region = Rect2( 512, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 20 )
+region = Rect2( 576, 0, 64, 64 )
+
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 20 )
 region = Rect2( 640, 0, 64, 64 )
@@ -44,26 +64,6 @@ region = Rect2( 832, 0, 64, 64 )
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 20 )
 region = Rect2( 896, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 20 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 20 )
-region = Rect2( 64, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 20 )
-region = Rect2( 128, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 20 )
-region = Rect2( 192, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 20 )
-region = Rect2( 256, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 20 )
@@ -89,29 +89,29 @@ region = Rect2( 1536, 0, 64, 64 )
 atlas = ExtResource( 20 )
 region = Rect2( 1600, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=60]
 atlas = ExtResource( 20 )
-region = Rect2( 2432, 0, 64, 64 )
+region = Rect2( 1664, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 20 )
-region = Rect2( 2496, 0, 64, 64 )
+region = Rect2( 1728, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=62]
 atlas = ExtResource( 20 )
-region = Rect2( 2560, 0, 64, 64 )
+region = Rect2( 1792, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 20 )
-region = Rect2( 2624, 0, 64, 64 )
+region = Rect2( 1856, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 20 )
-region = Rect2( 2688, 0, 64, 64 )
+region = Rect2( 1920, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 20 )
-region = Rect2( 2752, 0, 64, 64 )
+region = Rect2( 1984, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 20 )
@@ -137,49 +137,49 @@ region = Rect2( 2304, 0, 64, 64 )
 atlas = ExtResource( 20 )
 region = Rect2( 2368, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=60]
+[sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 20 )
-region = Rect2( 1664, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=61]
+[sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 20 )
-region = Rect2( 1728, 0, 64, 64 )
+region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=62]
+[sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 20 )
-region = Rect2( 1792, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=63]
+[sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 20 )
-region = Rect2( 1856, 0, 64, 64 )
+region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=64]
+[sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 20 )
-region = Rect2( 1920, 0, 64, 64 )
+region = Rect2( 256, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=65]
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 20 )
-region = Rect2( 1984, 0, 64, 64 )
+region = Rect2( 2432, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 20 )
-region = Rect2( 320, 0, 64, 64 )
+region = Rect2( 2496, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 20 )
-region = Rect2( 384, 0, 64, 64 )
+region = Rect2( 2560, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 20 )
-region = Rect2( 448, 0, 64, 64 )
+region = Rect2( 2624, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=52]
+[sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 20 )
-region = Rect2( 512, 0, 64, 64 )
+region = Rect2( 2688, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=53]
+[sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 20 )
-region = Rect2( 576, 0, 64, 64 )
+region = Rect2( 2752, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 20 )
@@ -203,14 +203,14 @@ region = Rect2( 1216, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
+"frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
+"loop": true,
+"name": "IDLEUP",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "IDLELEFT",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
-"loop": true,
-"name": "IDLEDOWN",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
@@ -218,9 +218,9 @@ animations = [ {
 "name": "WALKDOWN",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
+"frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ) ],
 "loop": true,
-"name": "WALKRIGHT",
+"name": "WALKUP",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
@@ -228,14 +228,14 @@ animations = [ {
 "name": "WALKLEFT",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ) ],
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
 "loop": true,
-"name": "WALKUP",
+"name": "IDLEDOWN",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
+"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
 "loop": true,
-"name": "IDLEUP",
+"name": "WALKRIGHT",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
@@ -1050,19 +1050,21 @@ volume_db = -10.0
 
 [node name="Control" type="Control" parent="."]
 margin_left = -58.0
+margin_top = 147.0
 margin_right = 979.0
-margin_bottom = 616.0
+margin_bottom = 763.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title" type="Label" parent="Control"]
-margin_left = 314.0
-margin_top = 79.0
-margin_right = 654.0
-margin_bottom = 169.0
+margin_left = 373.0
+margin_top = 18.0
+margin_right = 713.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 0.996078, 1, 0.298039, 1 )
 custom_fonts/font = SubResource( 6 )
-text = "Key of Success"
+text = "Keyholder"
 percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1073,28 +1075,53 @@ margin_right = 12.0
 margin_bottom = 20.0
 focus_mode = 2
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Start" type="Button" parent="Control/MenuButton"]
-margin_left = 284.0
-margin_top = 219.0
-margin_right = 435.0
-margin_bottom = 279.0
-focus_neighbour_left = NodePath("../Quit")
+margin_left = 400.0
+margin_top = 93.0
+margin_right = 551.0
+margin_bottom = 153.0
+focus_neighbour_top = NodePath("../Quit")
+focus_neighbour_right = NodePath("../Endless")
+focus_neighbour_bottom = NodePath("../Endless")
 custom_colors/font_color_focus = Color( 0.996078, 1, 0.298039, 1 )
 custom_fonts/font = SubResource( 7 )
 custom_styles/focus = SubResource( 67 )
-text = "Play"
+text = "Classic"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Endless" type="Button" parent="Control/MenuButton"]
+margin_left = 400.0
+margin_top = 146.0
+margin_right = 554.0
+margin_bottom = 210.0
+focus_neighbour_left = NodePath("../Start")
+focus_neighbour_top = NodePath("../Start")
+focus_neighbour_right = NodePath("../Quit")
+focus_neighbour_bottom = NodePath("../Quit")
+custom_colors/font_color_focus = Color( 0.996078, 1, 0.298039, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+text = "Endless"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Quit" type="Button" parent="Control/MenuButton"]
-margin_left = 505.0
-margin_top = 219.0
-margin_right = 659.0
-margin_bottom = 283.0
-focus_neighbour_right = NodePath("../Start")
+margin_left = 394.0
+margin_top = 210.0
+margin_right = 548.0
+margin_bottom = 274.0
+focus_neighbour_left = NodePath("../Endless")
+focus_neighbour_top = NodePath("../Endless")
+focus_neighbour_bottom = NodePath("../Start")
 custom_colors/font_color_focus = Color( 0.996078, 1, 0.298039, 1 )
 custom_fonts/font = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
@@ -1105,12 +1132,17 @@ __meta__ = {
 }
 
 [node name="KeyStart" type="Sprite" parent="Control"]
-position = Vector2( 362, 220 )
+position = Vector2( 553, 128 )
+scale = Vector2( 0.0322266, 0.0351563 )
+texture = ExtResource( 14 )
+
+[node name="KeyEndless" type="Sprite" parent="Control"]
+position = Vector2( 562, 185 )
 scale = Vector2( 0.0322266, 0.0351563 )
 texture = ExtResource( 14 )
 
 [node name="KeyQuit" type="Sprite" parent="Control"]
-position = Vector2( 581, 220 )
+position = Vector2( 530, 245 )
 scale = Vector2( 0.0322266, 0.0351563 )
 texture = ExtResource( 14 )
 

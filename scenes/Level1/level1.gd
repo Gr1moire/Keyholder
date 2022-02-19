@@ -2,18 +2,28 @@ extends WorldEnvironment
 
 var introDone = false;
 var doorOpened = false;
+var sceneName;
 
 func _ready():
+	sceneName = get_tree().current_scene.name
 	Music.playLevelSound();
 	$"clé".connect("zero_health", self, "_start_lose_animation");
-	$DoorAnim.connect("animation_finished", self, "_on_door_appeared");
-	if (get_tree().get_current_scene().get_name() == "Level1"):
+	
+	# Intro animation & music
+	if (sceneName == "Level1"):
 		$"Intro Event".connect("body_entered", self, "_start_intro_animation");	
-	if (get_tree().current_scene.name != "Level1"):
-		print("bjr");
-		$DoorAnim.play("Door Appear");
-	if (get_tree().current_scene.name == "Level3"):
+	if (sceneName == "LevelEndless"):
+		Music.playLevelMusic()
+
+	# Start spawn variation
+	if (sceneName == "Level3" || sceneName == "LevelEndless"):
 		$SpawnAnim.play("spawn");
+		
+	# Door	
+	if (sceneName != "Level1"):
+		$DoorAnim.play("Door Appear");	
+	if (sceneName != "LevelEndless"):
+		$DoorAnim.connect("animation_finished", self, "_on_door_appeared");
 
 func _on_door_appeared(animName):
 	if (animName == "Door Appear"):

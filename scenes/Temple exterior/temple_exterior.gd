@@ -8,9 +8,15 @@ func _ready():
 	starting_state();
 	$Timer.start(1);
 	$Timer.connect("timeout", self, "pop_title");
+	
+	# Menu button pressed
 	$Control/MenuButton/Start.connect("pressed", self, "_on_Start_pressed");
+	$Control/MenuButton/Endless.connect("pressed", self, "_on_Endless_pressed")
 	$Control/MenuButton/Quit.connect("pressed", self, "_on_Quit_pressed");
+	
+	# Menu button focus entered
 	$Control/MenuButton/Start.connect("focus_entered", self, "_on_Start_focus_entered");
+	$Control/MenuButton/Endless.connect("focus_entered", self, "_on_Endless_focus_entered");
 	$Control/MenuButton/Quit.connect("focus_entered", self, "_on_Quit_focus_entered");
 	
 #Dialogs
@@ -29,6 +35,7 @@ var selectionMade = false;
 func starting_state():
 	$Control/KeyQuit.visible = false
 	$Control/KeyStart.visible = false
+	$Control/KeyEndless.visible = false
 	$Control/Title.visible_characters = 0
 	$Control/MenuButton.visible = false
 
@@ -47,6 +54,13 @@ func _on_Start_pressed():
 		yield(get_tree().create_timer(1.0), "timeout")
 		$AnimationPlayer.play("MenuFade");
 
+func _on_Endless_pressed():
+	if !selectionMade:
+		selectionMade = true;				
+		$MenuValidation.play()
+		yield(get_tree().create_timer(1.0), "timeout")
+		TransitionsAl.new_scene_dir = "res://scenes/Level Endless/LevelEndless.tscn"
+		TransitionsAl.load_state()
 
 func _on_Quit_pressed():
 	if !selectionMade:
@@ -60,12 +74,20 @@ func _on_Start_focus_entered():
 		$MenuSound.play()
 		$Control/KeyStart.visible = true
 		$Control/KeyQuit.visible = false
+		$Control/KeyEndless.visible = false
 
+func _on_Endless_focus_entered():
+	if !selectionMade:
+		$MenuSound.play()
+		$Control/KeyEndless.visible = true
+		$Control/KeyStart.visible = false
+		$Control/KeyQuit.visible = false
 
 func _on_Quit_focus_entered():
 	if !selectionMade:
 		$MenuSound.play()
 		$Control/KeyStart.visible = false
+		$Control/KeyEndless.visible = false
 		$Control/KeyQuit.visible = true
 
 

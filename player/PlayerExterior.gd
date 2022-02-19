@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const MAX_SPEED = 300
-const ACCELERATION = 6000
-const FRICTION = 2000
+export var MAX_SPEED = 300
+export var ACCELERATION = 6000
+export var FRICTION = 2000
  
 var canMove = false
 var canInteract = false

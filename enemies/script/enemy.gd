@@ -16,6 +16,8 @@ var scene_name
 
 var rng = RandomNumberGenerator.new()
 
+signal dead
+
 func _ready():
 	scene_name = get_tree().current_scene.name
 	$AnimatedSprite.play("wak")
@@ -33,7 +35,7 @@ func _physics_process(delta):
 		near_point = true
 	elif scene_name == "Level2" and global_position.distance_to(Globals.run_point_2[flee_point]) < 50:
 		near_point = true
-	elif scene_name == "Level3" and global_position.distance_to(Globals.run_point_3[flee_point]) < 50:
+	elif scene_name == "Level3" || scene_name == "LevelEndless" and global_position.distance_to(Globals.run_point_3[flee_point]) < 50:
 		near_point = true
 
 	if has_key:
@@ -63,8 +65,9 @@ func generate_path():
 				path = levelNavigation.get_simple_path(global_position, Globals.run_point[flee_point], false)
 			elif scene_name == "Level2":
 				path = levelNavigation.get_simple_path(global_position, Globals.run_point_2[flee_point], false)
-			elif scene_name == "Level3":
+			elif scene_name == "Level3" || scene_name == "LevelEndless":
 				path = levelNavigation.get_simple_path(global_position, Globals.run_point_3[flee_point], false)
+				
 		else:
 			path = levelNavigation.get_simple_path(global_position, player.global_position, false)
 
@@ -72,7 +75,7 @@ func move():
 	velocity = move_and_slide(velocity)
 
 func get_best_flee():
-	if scene_name == "Level1" or scene_name == "Level3":
+	if scene_name == "Level1" or scene_name == "Level3" or scene_name == "LevelEndless":
 		return rng.randf_range(0, 7)
 	elif scene_name == "Level2":
 		return rng.randf_range(0, 6)
@@ -98,5 +101,6 @@ func trigger_death():
 	Globals.camera.shake(0.2, 15, 8)
 	dead = true
 	$AnimationPlayer.play("Shrink light")
+	emit_signal("dead")
 	yield(get_tree().create_timer(0.5), "timeout");
 	queue_free();

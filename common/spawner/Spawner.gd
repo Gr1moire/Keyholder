@@ -12,12 +12,16 @@ export(bool)        var spawning: bool = true
 export(PackedScene)	var secondary_enemy = preload("res://enemies/enemy_strong/enemy.tscn")
 export(bool)		var secondary_spawning: bool = false
 export(int)			var spawn_interval:int = 4
+export(bool)		var updateScore = false
+export(NodePath)	var ScoreController: NodePath
 
 var parent: Node
 var timer: Timer
 var spawn_tick:int = 0
 
 onready var expload = preload("res://common/explode.tscn")
+
+signal enemy_dead
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,6 +40,9 @@ func _ready():
 
 	if spawning:
 		self.start()
+		
+	if updateScore:
+		connect("enemy_dead", get_node(ScoreController), "_add_enemy_killed_score")
 
 func spawn():
 	var enemy
@@ -50,6 +57,7 @@ func spawn():
 	enemy.add_to_group("generatedEnemy");
 	enemy.position = self.position
 	parent.add_child(enemy)
+	enemy.connect("dead", self, "_notify_enemy_death")
 	emit_signal("spawn")
 	#spawn particules
 	var ex = expload.instance()
@@ -69,3 +77,6 @@ func stop():
 	$Particles2D.emitting = false;
 	$AnimationPlayer.play_backwards("Light appear");
 	emit_signal("stop")
+	
+func _notify_enemy_death():
+	emit_signal("enemy_dead")
