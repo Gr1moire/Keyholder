@@ -420,6 +420,30 @@ tracks/11/keys = {
 "method": "play"
 } ]
 }
+tracks/12/type = "value"
+tracks/12/path = NodePath("Control/MenuButton/Endless:self_modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Control/KeyEndless:self_modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "Pop"
@@ -1022,7 +1046,6 @@ visible = false
 position = Vector2( 418, 111 )
 scale = Vector2( 2.04545, 2.16667 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -1132,12 +1155,12 @@ __meta__ = {
 }
 
 [node name="KeyStart" type="Sprite" parent="Control"]
-position = Vector2( 553, 128 )
+position = Vector2( 553, 125 )
 scale = Vector2( 0.0322266, 0.0351563 )
 texture = ExtResource( 14 )
 
 [node name="KeyEndless" type="Sprite" parent="Control"]
-position = Vector2( 562, 185 )
+position = Vector2( 562, 181 )
 scale = Vector2( 0.0322266, 0.0351563 )
 texture = ExtResource( 14 )
 
@@ -1145,7 +1168,5 @@ texture = ExtResource( 14 )
 position = Vector2( 530, 245 )
 scale = Vector2( 0.0322266, 0.0351563 )
 texture = ExtResource( 14 )
-
-[node name="c" type="CanvasLayer" parent="."]
 
 [connection signal="body_entered" from="World/Player/Area2D" to="World/Player" method="_on_Area2D_body_entered"]
