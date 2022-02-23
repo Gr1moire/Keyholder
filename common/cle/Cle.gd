@@ -12,7 +12,7 @@ export(float) var max_fluctuation_speed = 100.0;
 export(float) var fluctuation_percentage = 30.0;
 var max_time = 100000000.0
 var time = 0.0;
-var max_energy = 0;
+var max_energy = 150;
 var tmp
 var health = max_health;
 var lose:bool = false;

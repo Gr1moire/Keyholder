@@ -73,13 +73,13 @@ __meta__ = {
 }
 
 [node name="TitreFin" type="Label" parent="."]
-margin_left = 277.0
-margin_top = 90.0
-margin_right = 747.0
-margin_bottom = 180.0
+margin_left = 297.0
+margin_top = 92.0
+margin_right = 726.0
+margin_bottom = 182.0
 custom_colors/font_color = Color( 0.831373, 0.0588235, 0.0588235, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Fin de partie"
+text = "Game Over 	"
 percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -98,22 +98,22 @@ focus_neighbour_top = NodePath("../RetourMenu")
 custom_colors/font_color_focus = Color( 0.996078, 1, 0.298039, 1 )
 custom_fonts/font = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
-text = "Rejouer"
+text = "Retry"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RetourMenu" type="Button" parent="MenuButton"]
-margin_left = 337.0
-margin_top = 360.0
-margin_right = 687.0
-margin_bottom = 420.0
+margin_left = 325.0
+margin_top = 357.0
+margin_right = 699.0
+margin_bottom = 417.0
 focus_neighbour_bottom = NodePath("../Rejouer")
 custom_colors/font_color_focus = Color( 0.996078, 1, 0.298039, 1 )
 custom_fonts/font = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
-text = "Retour au menu"
+text = "Go to Main Menu"
 flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

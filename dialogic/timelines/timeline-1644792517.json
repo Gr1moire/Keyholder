@@ -4,25 +4,25 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Sur le mur d'enceinte du temple, une inscription attire votre attention :"
+			"text": "Just before entering the temple, some writings pique your interest :"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "« Tous possèdent la [color=#f0d78e]Clé[/color], mais combien atteignent la [color=#f0d78e]Porte[/color] ? »\n« Et jamais un preu ne la trouva sans prendre de risque. »\n« Ceux qui sauront garder leur [color=#f0d78e]clé[/color] loin des [color=#9e6af2]esprits malins[/color] obtiendront le sésame tant recherché »\n« Mais les autres rejoindront leurs rangs. »"
+			"text": "« Many a son and daughter of Mankind possess the [color=#f0d78e]Key[/color], but how much find its [color=#f0d78e]Door[/color]? »\n« But this path was never one without danger. »\n« Those fortunate enough to keep their [color=#f0d78e]Key[/color] from the eldritch influence of the [color=#9e6af2]fiends[/color] roaming these forsaken grounds shall reach their most awaited reward. »\n« Those more unfortunate, however, shall become one of them. »"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Vous remarquez également d'autres inscriptions dans une langue que vous ne semblez pas savoir lire\nBien que cette langue vous soit inconnue, plusieurs phrases étranges résonnent dans votre esprit : \n«  [color=#f0d78e]Contrôles :[/color] Z, Q, S, D pour se déplacer. Souris pour viser. Maintenir le clic gauche pour tirer. E pour interagir. »\n« Survivez pendant [color=#f0d78e]une minute et trente secondes[/color] en protégeant votre [color=#f0d78e]clé[/color] des [color=#9e6af2]assaillants qui voudront vous la voler[/color]. »\n« Mais attention, la [color=#f0d78e]clé[/color] se [color=#9e6af2]corrompt rapidement[/color] quand elle n'est pas proche de vous. »\n« En haut à gauche de l'écran se trouve une jauge représentant l'état de la [color=#f0d78e]clé[/color], vous pouvez aussi garder un oeil sur sa lumière, moins elle brille, moins elle est en bon état. »\n« [color=#f0d78e]Une fois la porte illuminée, rendez-vous y rapidement ![/color] »"
+			"text": "You also notice some other sentences written in an unknown yet strangely familiar language\nWhile you can't seem to make any sense of these words, their meaning starts to resonate in your mind :\n«  [color=#f0d78e]Controls :[/color] Z, Q, S, D to move. Mouse to aim. Hold the left mouse button to shoot. E to interact. »\n« Survive for  [color=#f0d78e]one minute[/color] while protecting your [color=#f0d78e]Key[/color] from [color=#9e6af2]the enemies trying to steal it.[/color]. »\n« But beware, the [color=#f0d78e]Key[/color] will quickly [color=#9e6af2]corrupt[/color] if not in your safe hands. »\n« A gauge showing the state of the [color=#f0d78e]Key[/color] can be found in the top-left corner of the screen, furthermore the key's light will fade as it's state worsen. »\n« [color=#f0d78e]When the Door starts emitting light, get to it as quickly as possible![/color] »"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Après toute cette lecture, vous finissez par franchir la porte et vous engoufrer à l'intérieur de l'édifice."
+			"text": "After finishing reading all these scriptures, you finaly enter the temple."
 		},
 		{
 			"emit_signal": "ended",

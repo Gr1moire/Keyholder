@@ -8,13 +8,13 @@ func _ready():
 
 func pop():
 	$AnimationPlayer.play("Pop");
+	Music.stopEverything();	
 
 func _on_RetourMenu_pressed():
 	$ValidationSound.play()
 	yield(get_tree().create_timer(1.0), "timeout")
 	TransitionsAl.new_scene_dir = "res://scenes/Temple exterior/temple_exterior.tscn"
 	TransitionsAl.select_transition = TransitionsAl.transition_type.Fade
-	Music.stopEverything()
 	TransitionsAl.load_state()
 
 func _on_Rejouer_pressed():
@@ -24,11 +24,9 @@ func _on_Rejouer_pressed():
 	TransitionsAl.select_transition = TransitionsAl.transition_type.Fade
 	TransitionsAl.load_state()
 
-
 func fadding_letter_finished():
 	$MenuButton.visible = true
 	$MenuButton/Rejouer.grab_focus()
-
 
 func _on_Rejouer_focus_entered():
 	$ChangingSound.play()

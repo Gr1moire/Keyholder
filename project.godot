@@ -50,7 +50,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="The Key of Success"
+config/name="Keyholder"
 run/main_scene="res://scenes/Splash_screen/splash_screen.tscn"
 config/icon="res://icon.png"
 

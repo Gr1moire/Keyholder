@@ -50,7 +50,7 @@ func exit():
 
 func _process(_delta):
 	if self.can_cancel:
-		if Input.is_action_pressed("ui_cancel"):
+		if Input.is_action_pressed("ui_cancel") or Input.is_action_pressed("ui_accept"):
 			self.can_cancel = false
 			self.exit()
 		

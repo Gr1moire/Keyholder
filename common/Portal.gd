@@ -8,10 +8,8 @@ func _process(delta):
 	if get_parent().doorOpened:
 		if !door.canInteract and overlaps_body(player):
 			door.canInteract = true;
-			print (door.canInteract);
 		if door.canInteract and !overlaps_body(player):
 			door.canInteract = false;
-			print (door.canInteract);
 			
 		if door.canInteract and overlaps_body(player):
 			if Input.is_action_just_released("ui_select"):
