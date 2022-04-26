@@ -25,7 +25,7 @@ En terme d'inspiration, nous pourrions citer Yoshi's Island pour le gameplay, no
 
 ## Téléchargement
 
-**TBA**
+https://galerianstudio.itch.io/keyholder
 
 Nous avons uploadé le jeu sur Itch.io. Celui-ci peut être téléchargé gratuitement, il suffit d'entrer 0€ au moment du téléchargement.
 **Attention,** les certificats de signature de code sont trop chers pour des étudiants, Windows aura donc tendance à prévenir d'un risque potentiel. C'est evidemment un faux positif.
